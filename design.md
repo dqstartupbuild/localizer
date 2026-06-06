@@ -8,7 +8,9 @@ Localizer uses a quiet, precise, productivity-first dashboard aesthetic. The int
 
 The mockup is airy but information-dense. Large page sections sit on a very pale app background, while individual task areas use crisp white panels with hairline borders. The overall mood is polished, utilitarian, and lightly premium, with visual interest coming from clean hierarchy, compact status indicators, small icons, and progress bars rather than decorative illustration.
 
-The design should avoid marketing-page patterns. The first screen is the working product: projects, localization review, screenshot review, metadata editing, and workflow status.
+Dashboard surfaces should avoid marketing-page patterns. The working product should stay direct and operational: projects, localization review, screenshot review, metadata editing, and workflow status.
+
+The marketing landing page is the exception. It should stay simple, human, and non-technical, with screenshots as the lead idea and one clear CTA into the dashboard.
 
 ## 2. Color Palette & Roles
 
@@ -72,3 +74,13 @@ Hover states should be restrained. White controls can shift to Pale App Canvas (
 Selected entities should be clear but not heavy. Use teal borders, soft mint backgrounds, checked controls, or status pills instead of large shadows.
 
 Loading states should preserve the layout skeleton. Empty states should be compact and operational, with a direct action instead of illustration-heavy messaging.
+
+## 8. Marketing Landing Page
+
+The landing page should be radically simple and non-technical. Lead with the promise that app screenshots can be localized in five minutes, then explain that app text and App Store copy come along with the workflow.
+
+The hero uses the real dashboard demo video as autoplaying, muted, looping media. The user should not need to press play. The primary CTA is always `Go to dashboard` and links to `/projects`.
+
+Landing page copy should sound human and practical. Avoid implementation terms such as parsers, XCUITest, resource files, build steps, or APIs on the marketing page.
+
+The hero may use large type because it is marketing content, but dashboard pages should keep the compact operational typography defined above.

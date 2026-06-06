@@ -1,6 +1,6 @@
 # Localizer
 
-Localizer is a routed T3 App for localizing iOS apps, App Store metadata, and in-app screenshots from one workflow.
+Localizer is a routed T3 App for localizing iOS apps, App Store metadata, and in-app screenshots from one workflow. The root route is a simple marketing landing page, and the dashboard starts at `/projects`.
 
 ## Docs
 
@@ -29,8 +29,9 @@ npm run build
 
 ## Current Implementation
 
-The current application implements separate product screens using the mockup as a design reference:
+The current application includes a non-technical marketing landing page and separate product screens using the mockup as a design reference:
 
+- `/`
 - `/projects`
 - `/projects/new`
 - `/projects/calisthenics-guppy/overview`
@@ -42,6 +43,8 @@ The current application implements separate product screens using the mockup as 
 - `/settings`
 
 Dashboard data is currently served through a typed tRPC mock data router. Persistent storage and production workflows are covered in `technical-architecture.md`.
+
+The landing page hosts the recorded dashboard walkthrough from `public/videos/localizer-dashboard-demo.webm` as a muted, looping hero video. Its primary CTA links to `/projects`.
 
 ## Demo
 

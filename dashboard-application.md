@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Localizer web application is a routed T3 App. The supplied mockup is used as a visual reference for density, hierarchy, color, spacing, tables, cards, and controls, but the product is implemented as actual screens instead of one combined mockup page.
+The Localizer web application is a routed T3 App. The root route is a simple marketing landing page with a looping product demo hero. The supplied mockup is used as a visual reference for dashboard density, hierarchy, color, spacing, tables, cards, and controls, but the product is implemented as actual screens instead of one combined mockup page.
 
 The app currently represents the MVP dashboard surface for:
 
@@ -40,7 +40,7 @@ The app also uses `lucide-react` for functional dashboard icons and `@playwright
 ## Route Map
 
 ```text
-/                                      -> redirects to /projects
+/                                      -> marketing landing page with autoplay demo hero and /projects CTA
 /projects                              -> project list and project creation entry point
 /projects/new                          -> create project and CLI setup instructions
 /projects/[projectId]/overview         -> project status, setup workflow, locales, next actions
@@ -54,7 +54,7 @@ The app also uses `lucide-react` for functional dashboard icons and `@playwright
 
 ## Data Flow
 
-Each route fetches the current dashboard model server-side through tRPC:
+Dashboard routes fetch the current dashboard model server-side through tRPC:
 
 ```text
 src/app/**/page.tsx
@@ -88,10 +88,14 @@ src/
 │   │       └── activity/page.tsx
 │   └── settings/page.tsx
 ├── features/
-│   └── dashboard/
-│       ├── components/
-│       ├── pages/
-│       └── types/
+│   ├── dashboard/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── types/
+│   └── marketing/
+│       └── pages/
+├── public/
+│   └── videos/
 ├── server/
 │   ├── api/
 │   └── data/
@@ -99,6 +103,8 @@ src/
 ```
 
 ## Page Responsibilities
+
+`LandingPage.tsx` renders the marketing home page with a muted, looping demo video, simple human copy, and the primary dashboard CTA.
 
 `ProjectsPage.tsx` renders all connected applications and links into each project.
 
