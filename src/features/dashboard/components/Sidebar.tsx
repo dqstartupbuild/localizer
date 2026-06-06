@@ -1,11 +1,3 @@
-import {
-  Activity,
-  Camera,
-  FilePenLine,
-  Folder,
-  Languages,
-  Settings,
-} from "lucide-react";
 import { type DashboardData } from "~/features/dashboard/types/dashboardData";
 import { BrandMark } from "~/features/dashboard/components/BrandMark";
 import { SidebarHelpCard } from "~/features/dashboard/components/SidebarHelpCard";
@@ -18,14 +10,47 @@ type SidebarProps = {
   user: DashboardData["user"];
 };
 
+const activeProjectId = "calisthenics-guppy";
+
 const navigationItems = [
-  { label: "Projects", icon: Folder, active: true },
-  { label: "Localizations", icon: Languages, active: false },
-  { label: "Screenshots", icon: Camera, active: false },
-  { label: "Metadata", icon: FilePenLine, active: false },
-  { label: "Activity", icon: Activity, active: false },
-  { label: "Settings", icon: Settings, active: false },
-];
+  {
+    label: "Projects",
+    icon: "folder",
+    href: "/projects",
+    matchPaths: ["/projects", "/projects/new"],
+  },
+  {
+    label: "Overview",
+    icon: "overview",
+    href: `/projects/${activeProjectId}/overview`,
+  },
+  {
+    label: "Localizations",
+    icon: "languages",
+    href: `/projects/${activeProjectId}/localizations`,
+  },
+  {
+    label: "Screen Discovery",
+    icon: "scan",
+    href: `/projects/${activeProjectId}/screen-discovery`,
+  },
+  {
+    label: "Screenshots",
+    icon: "camera",
+    href: `/projects/${activeProjectId}/screenshots`,
+  },
+  {
+    label: "Metadata",
+    icon: "file",
+    href: `/projects/${activeProjectId}/metadata`,
+  },
+  {
+    label: "Activity",
+    icon: "activity",
+    href: `/projects/${activeProjectId}/activity`,
+  },
+  { label: "Settings", icon: "settings", href: "/settings" },
+] as const;
 
 export function Sidebar({ planUsages, user }: SidebarProps) {
   return (
@@ -37,7 +62,8 @@ export function Sidebar({ planUsages, user }: SidebarProps) {
             key={item.label}
             label={item.label}
             icon={item.icon}
-            active={item.active}
+            href={item.href}
+            matchPaths={"matchPaths" in item ? item.matchPaths : undefined}
           />
         ))}
       </nav>

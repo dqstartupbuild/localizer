@@ -86,15 +86,67 @@ export type WorkflowStep = {
   icon: "folder" | "scan" | "review" | "camera" | "edit" | "export";
 };
 
+export type OverviewStat = {
+  label: string;
+  value: string;
+  detail: string;
+  tone: "teal" | "gold" | "slate";
+};
+
+export type LocaleOption = {
+  code: string;
+  name: string;
+  enabled: boolean;
+  completion: number;
+};
+
+export type SetupStep = {
+  title: string;
+  description: string;
+  status: "Complete" | "Current" | "Waiting";
+};
+
+export type StateCandidate = {
+  id: string;
+  screenName: string;
+  stateName: string;
+  setupStrategy:
+    | "navigation_only"
+    | "launch_argument"
+    | "generated_preview_host";
+  confidence: number;
+  selected: boolean;
+};
+
+export type ActivityEvent = {
+  id: string;
+  title: string;
+  description: string;
+  timestamp: string;
+  status: "Complete" | "Running" | "Waiting" | "Failed";
+};
+
+export type BuildSetting = {
+  label: string;
+  value: string;
+  description: string;
+};
+
 export type DashboardData = {
   projects: ProjectSummary[];
   planUsages: PlanUsage[];
   user: UserSummary;
+  overviewStats: OverviewStat[];
+  supportedLocales: LocaleOption[];
+  setupSteps: SetupStep[];
   localizationTabs: LocalizationTab[];
   localizationRows: LocalizationRow[];
   screenStats: ScreenDiscoveryStat[];
   screenCandidates: ScreenCandidate[];
+  stateCandidates: StateCandidate[];
   screenshotGroups: ScreenshotGroup[];
   metadataFields: MetadataField[];
+  activityEvents: ActivityEvent[];
+  buildSettings: BuildSetting[];
   workflowSteps: WorkflowStep[];
 };

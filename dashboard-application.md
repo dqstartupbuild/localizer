@@ -2,18 +2,22 @@
 
 ## Overview
 
-The first Localizer application screen is a T3 App dashboard built from the supplied mockup and the product scope documents.
+The Localizer web application is a routed T3 App. The supplied mockup is used as a visual reference for density, hierarchy, color, spacing, tables, cards, and controls, but the product is implemented as actual screens instead of one combined mockup page.
 
-It represents the main working surface for:
+The app currently represents the MVP dashboard surface for:
 
-- Project health
-- Translation review
-- Screen discovery
-- Screenshot review
+- Project creation and management
+- CLI setup guidance
+- Project overview and next actions
+- Locale selection
+- Translation review and manual overrides
+- Screen and state discovery
+- Screenshot generation review
 - App Store metadata localization
-- Localization workflow progress
+- Activity and run status
+- Build-generation settings
 
-The current implementation uses typed mock data served through tRPC. This keeps the UI wired to a realistic server boundary while the persistent database and production backend are still future work.
+The implementation uses typed mock data served through tRPC. This keeps every page wired through a realistic server boundary while persistent storage and production job execution remain future work.
 
 ## Stack
 
@@ -31,137 +35,122 @@ Selected options:
 - tRPC
 - ESLint
 
-The dashboard also uses `lucide-react` for icons so controls use familiar symbols instead of custom SVGs.
+The app also uses `lucide-react` for functional dashboard icons and `@playwright/test` for screenshot/video verification.
 
-## Design Source
+## Route Map
 
-`design.md` defines the semantic design system extracted from the mockup.
-
-The UI follows these core rules:
-
-- Pale app canvas
-- White bordered operational panels
-- Teal primary actions and approved states
-- Dark navy export actions
-- Compact tables and controls
-- 8 pixel or smaller panel rounding
-- Dense dashboard layout on desktop
-- Compact mobile navigation with stacked work panels
+```text
+/                                      -> redirects to /projects
+/projects                              -> project list and project creation entry point
+/projects/new                          -> create project and CLI setup instructions
+/projects/[projectId]/overview         -> project status, setup workflow, locales, next actions
+/projects/[projectId]/localizations    -> string table, filters, approvals, manual override editor
+/projects/[projectId]/screen-discovery -> discovered screens and suggested screenshot states
+/projects/[projectId]/screenshots      -> screenshot run controls, matrix summary, preview gallery
+/projects/[projectId]/metadata         -> App Store metadata localization review
+/projects/[projectId]/activity         -> analysis, translation, metadata, and screenshot activity
+/settings                              -> locales, build generation, and protected terms
+```
 
 ## Data Flow
 
-The App Router page fetches dashboard data server-side:
+Each route fetches the current dashboard model server-side through tRPC:
 
 ```text
-src/app/page.tsx
+src/app/**/page.tsx
   -> api.dashboard.summary()
   -> src/server/api/routers/dashboard.ts
   -> src/server/data/dashboardData.ts
-  -> LocalizerDashboard
+  -> page component
 ```
 
-The data contract lives in:
+The shared data contract lives in:
 
 ```text
 src/features/dashboard/types/dashboardData.ts
 ```
-
-This keeps the current app type-safe while leaving room to replace static data with database-backed queries later.
 
 ## File Tree
 
 ```text
 src/
 ├── app/
-│   ├── layout.tsx
-│   └── page.tsx
+│   ├── page.tsx
+│   ├── projects/
+│   │   ├── page.tsx
+│   │   ├── new/page.tsx
+│   │   └── [projectId]/
+│   │       ├── overview/page.tsx
+│   │       ├── localizations/page.tsx
+│   │       ├── screen-discovery/page.tsx
+│   │       ├── screenshots/page.tsx
+│   │       ├── metadata/page.tsx
+│   │       └── activity/page.tsx
+│   └── settings/page.tsx
 ├── features/
 │   └── dashboard/
 │       ├── components/
-│       │   ├── BrandMark.tsx
-│       │   ├── LocalizationTable.tsx
-│       │   ├── LocalizationTabs.tsx
-│       │   ├── LocalizationsPanel.tsx
-│       │   ├── LocalizerDashboard.tsx
-│       │   ├── MetadataFieldRow.tsx
-│       │   ├── MetadataPanel.tsx
-│       │   ├── Panel.tsx
-│       │   ├── PhoneScreenshotPreview.tsx
-│       │   ├── ProgressBar.tsx
-│       │   ├── ProjectCard.tsx
-│       │   ├── ProjectLogo.tsx
-│       │   ├── ProjectMetric.tsx
-│       │   ├── ProjectsPanel.tsx
-│       │   ├── ScreenCandidateRow.tsx
-│       │   ├── ScreenDiscoveryPanel.tsx
-│       │   ├── ScreenThumb.tsx
-│       │   ├── ScreenshotTile.tsx
-│       │   ├── ScreenshotsPanel.tsx
-│       │   ├── Sidebar.tsx
-│       │   ├── SidebarHelpCard.tsx
-│       │   ├── SidebarNavItem.tsx
-│       │   ├── SidebarPlanCard.tsx
-│       │   ├── SidebarUserCard.tsx
-│       │   ├── StatusBadge.tsx
-│       │   ├── ToolbarButton.tsx
-│       │   ├── WorkflowStepItem.tsx
-│       │   └── WorkflowStrip.tsx
+│       ├── pages/
 │       └── types/
-│           └── dashboardData.ts
 ├── server/
 │   ├── api/
-│   │   ├── root.ts
-│   │   └── routers/
-│   │       └── dashboard.ts
 │   └── data/
-│       └── dashboardData.ts
 └── styles/
-    └── globals.css
 ```
 
-## Component Responsibilities
+## Page Responsibilities
 
-`LocalizerDashboard.tsx` composes the full page layout.
+`ProjectsPage.tsx` renders all connected applications and links into each project.
 
-`Sidebar.tsx` owns the app navigation shell. It renders the full plan and account area on desktop, then collapses to compact navigation on mobile.
+`NewProjectPage.tsx` captures app name and source locale, then shows the CLI setup command.
 
-`ProjectsPanel.tsx` renders project cards and completion metrics.
+`ProjectOverviewPage.tsx` shows project health, setup steps, supported locales, recent activity, and primary next actions.
 
-`LocalizationsPanel.tsx` renders translation tabs, search, locale controls, export controls, and the localization table.
+`LocalizationsPage.tsx` provides the translation table, locale filtering, approval states, and a focused manual override editor.
 
-`ScreenDiscoveryPanel.tsx` renders detected screen candidates, confidence, and selection state.
+`ScreenDiscoveryPage.tsx` separates screen selection from state selection so developers can confirm screenshot candidates before generation.
 
-`ScreenshotsPanel.tsx` renders locale controls, screen tabs, generated screenshot previews, and the regenerate action.
+`ScreenshotsPage.tsx` shows screenshot generation controls, matrix details, and localized screenshot previews.
 
-`MetadataPanel.tsx` renders App Store metadata source and translated fields.
+`MetadataPage.tsx` handles App Store metadata fields and the review rules that differ from in-app strings.
 
-`WorkflowStrip.tsx` renders the bottom workflow progression.
+`ActivityPage.tsx` exposes analysis and generation run status so reanalysis and blocked actions are visible.
 
-Shared UI primitives include:
+`SettingsPage.tsx` handles locales, build-time generation behavior, and protected terms.
+
+## Shared Components
+
+`AppShell.tsx` owns the sidebar and page canvas.
+
+`Sidebar.tsx` and `SidebarNavItem.tsx` render real route links with active state.
+
+`PageHeader.tsx` gives every screen a title, product context, description, and actions.
+
+Reusable primitives include:
 
 - `Panel.tsx`
 - `ToolbarButton.tsx`
 - `ProgressBar.tsx`
 - `StatusBadge.tsx`
+- `OverviewStatCard.tsx`
+- `EmptyStatePanel.tsx`
+
+Feature panels from the mockup are reused where they map to a real page:
+
+- `LocalizationsPanel.tsx`
+- `ScreenDiscoveryPanel.tsx`
+- `ScreenshotsPanel.tsx`
+- `MetadataPanel.tsx`
 
 ## Responsive Behavior
 
-Desktop uses a left sidebar plus a two-row operational grid:
+Desktop uses a fixed left sidebar and focused page content. Pages use split layouts only when the secondary content is part of the workflow, such as a selected string editor, state candidates, run details, or settings controls.
 
-- Projects and Localizations on the top row
-- Screen Discovery, Screenshots, and Metadata on the second row
-- Workflow strip across the bottom
-
-Mobile uses:
-
-- Compact top navigation
-- Hidden desktop-only plan and account blocks
-- Single-column work panels
-- Horizontally scrollable dense tables where needed
+Mobile uses compact top navigation and single-column page content. Dense tables and workflow strips can scroll horizontally where the data shape requires it.
 
 ## Verification
 
-Commands run:
+Expected checks:
 
 ```sh
 npm run typecheck
@@ -169,22 +158,10 @@ npm run lint
 npm run build
 ```
 
-The dev server was started with:
-
-```sh
-npm run dev
-```
-
-Port `3000` was already occupied, so Next.js served the app on:
+The local app usually serves at:
 
 ```text
 http://localhost:3001
 ```
 
-Rendered page checks:
-
-- `curl -I http://localhost:3001` returned `200 OK`.
-- Desktop screenshot captured with Playwright at `1440x900`.
-- Mobile screenshot captured with Playwright at `390x1200`.
-
-The Browser plugin was not exposed as a callable tool in this session, so Playwright CLI screenshots were used as the visual verification fallback.
+Port `3000` is already occupied on this machine, so Next.js selects `3001`.

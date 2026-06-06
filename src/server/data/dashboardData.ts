@@ -54,6 +54,70 @@ export const dashboardData: DashboardData = {
     name: "John Doe",
     email: "john@doe.dev",
   },
+  overviewStats: [
+    {
+      label: "Translations",
+      value: "1,210 / 1,234",
+      detail: "24 strings need review",
+      tone: "teal",
+    },
+    {
+      label: "Selected Screens",
+      value: "10",
+      detail: "6 excluded from screenshot runs",
+      tone: "teal",
+    },
+    {
+      label: "Screenshot Matrix",
+      value: "90 captures",
+      detail: "9 locales across selected states",
+      tone: "gold",
+    },
+    {
+      label: "Last Analysis",
+      value: "2h ago",
+      detail: "CLI v0.1.0, Xcode 17",
+      tone: "slate",
+    },
+  ],
+  supportedLocales: [
+    { code: "en-US", name: "English", enabled: true, completion: 100 },
+    { code: "es-ES", name: "Spanish", enabled: true, completion: 98 },
+    { code: "fr-FR", name: "French", enabled: true, completion: 94 },
+    { code: "de-DE", name: "German", enabled: true, completion: 91 },
+    { code: "it-IT", name: "Italian", enabled: true, completion: 88 },
+    { code: "ja-JP", name: "Japanese", enabled: true, completion: 83 },
+    { code: "ko-KR", name: "Korean", enabled: false, completion: 0 },
+    { code: "pt-BR", name: "Portuguese", enabled: false, completion: 0 },
+    {
+      code: "zh-Hans",
+      name: "Chinese Simplified",
+      enabled: false,
+      completion: 0,
+    },
+  ],
+  setupSteps: [
+    {
+      title: "Project created",
+      description: "Calisthenics Guppy is connected to this workspace.",
+      status: "Complete",
+    },
+    {
+      title: "Install CLI",
+      description: "Run npx localizer init inside the iOS app repository.",
+      status: "Complete",
+    },
+    {
+      title: "Review screens",
+      description: "Confirm screenshot screens and states before generation.",
+      status: "Current",
+    },
+    {
+      title: "Generate assets",
+      description: "Create translations, resources, metadata, and screenshots.",
+      status: "Waiting",
+    },
+  ],
   localizationTabs: [
     { label: "All Strings", active: true },
     { label: "Needs Review", count: 32, active: false },
@@ -156,6 +220,48 @@ export const dashboardData: DashboardData = {
       previewVariant: "debug",
     },
   ],
+  stateCandidates: [
+    {
+      id: "home-default-state",
+      screenName: "Home",
+      stateName: "Default",
+      setupStrategy: "navigation_only",
+      confidence: 96,
+      selected: true,
+    },
+    {
+      id: "home-no-data-state",
+      screenName: "Home",
+      stateName: "No Data",
+      setupStrategy: "launch_argument",
+      confidence: 88,
+      selected: true,
+    },
+    {
+      id: "progress-active-state",
+      screenName: "Progress",
+      stateName: "Active User",
+      setupStrategy: "generated_preview_host",
+      confidence: 84,
+      selected: true,
+    },
+    {
+      id: "workout-completed-state",
+      screenName: "Workout Detail",
+      stateName: "Completed",
+      setupStrategy: "launch_argument",
+      confidence: 90,
+      selected: true,
+    },
+    {
+      id: "debug-internal-state",
+      screenName: "DebugView",
+      stateName: "Internal Tools",
+      setupStrategy: "navigation_only",
+      confidence: 22,
+      selected: false,
+    },
+  ],
   screenshotGroups: [
     {
       title: "Home",
@@ -240,6 +346,65 @@ export const dashboardData: DashboardData = {
       targetValue:
         "NOUVEAU : suivi avance des progres et plans d'entrainement personnalises !",
       status: "Approved",
+    },
+  ],
+  activityEvents: [
+    {
+      id: "analysis-complete",
+      title: "Localization analysis completed",
+      description:
+        "Found 1,234 user-facing strings, 24 screen candidates, and 18 likely states.",
+      timestamp: "2h ago",
+      status: "Complete",
+    },
+    {
+      id: "translations-complete",
+      title: "Machine translations generated",
+      description:
+        "Created missing Spanish, French, German, Italian, and Japanese values without touching manual overrides.",
+      timestamp: "1h ago",
+      status: "Complete",
+    },
+    {
+      id: "screens-waiting",
+      title: "Screen review waiting",
+      description:
+        "Screenshot generation is paused until selected screens and states are confirmed.",
+      timestamp: "Now",
+      status: "Waiting",
+    },
+    {
+      id: "metadata-ready",
+      title: "Metadata localization ready",
+      description:
+        "App Store subtitle, description, keywords, and promotional text are ready for review.",
+      timestamp: "18m ago",
+      status: "Complete",
+    },
+  ],
+  buildSettings: [
+    {
+      label: "Resource format",
+      value: "String Catalog",
+      description: "Generate Localizer.xcstrings for modern Xcode projects.",
+    },
+    {
+      label: "Build generation",
+      value: "Local cache",
+      description:
+        "Normal builds use .localizer/translations-cache.json without network access.",
+    },
+    {
+      label: "Generated files",
+      value: "Committed",
+      description:
+        "Generated resources and typed accessors are committed for clean checkouts.",
+    },
+    {
+      label: "Protected terms",
+      value: "12 terms",
+      description:
+        "App name, brand terms, and product names stay untranslated.",
     },
   ],
   workflowSteps: [

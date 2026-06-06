@@ -2,15 +2,18 @@
 
 ## Localizer Dashboard Demo
 
-`localizer-dashboard-demo.webm` is an 18.6 second desktop walkthrough of the current Localizer dashboard.
+`localizer-dashboard-demo.webm` is an 18.4 second desktop walkthrough of the routed Localizer application.
 
 The recording shows:
 
-- Project status cards
-- Localization review table
-- Screen discovery panel
-- Screenshot preview panel
-- Metadata localization panel
-- Workflow strip
+- Projects
+- Project Overview
+- Localizations
+- Screen Discovery
+- Screenshots
+- App Store Metadata
+- Activity
+- Settings
+- Create Project
 
 The demo was recorded against the local development app at `http://localhost:3001`.
