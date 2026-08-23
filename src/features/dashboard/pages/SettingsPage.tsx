@@ -27,7 +27,7 @@ export function SettingsPage({ dashboard }: SettingsPageProps) {
                 <input
                   type="checkbox"
                   defaultChecked={locale.enabled}
-                  className="size-4 accent-[#0F8F86]"
+                  className="size-4 accent-[#08766F]"
                 />
                 <span className="min-w-0 flex-1">
                   <span className="block text-sm font-semibold text-[#111827]">
@@ -59,7 +59,7 @@ export function SettingsPage({ dashboard }: SettingsPageProps) {
                     <h2 className="text-sm font-semibold text-[#111827]">
                       {setting.label}
                     </h2>
-                    <span className="text-xs font-semibold text-[#0F8F86]">
+                    <span className="text-xs font-semibold text-[#08766F]">
                       {setting.value}
                     </span>
                   </div>
@@ -76,7 +76,7 @@ export function SettingsPage({ dashboard }: SettingsPageProps) {
               defaultValue={
                 "Calisthenics Guppy\nGuppy Pro\nSpider-Man\nApple Watch"
               }
-              className="w-full resize-none rounded-md border border-[#E5E7EB] bg-white p-3 text-sm leading-6 text-[#111827] outline-none focus:border-[#0F8F86]"
+              className="w-full resize-none rounded-md border border-[#E5E7EB] bg-white p-3 text-sm leading-6 text-[#111827] outline-none focus:border-[#08766F]"
             />
             <div className="mt-4">
               <ToolbarButton variant="primary">Save Terms</ToolbarButton>

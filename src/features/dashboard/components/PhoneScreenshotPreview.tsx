@@ -5,7 +5,7 @@ type PhoneScreenshotPreviewProps = {
 };
 
 const accentClasses = {
-  home: "bg-[#0F8F86]",
+  home: "bg-[#08766F]",
   workout: "bg-[#F2C94C]",
   progress: "bg-[#34D399]",
 };

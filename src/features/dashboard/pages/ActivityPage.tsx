@@ -10,8 +10,8 @@ type ActivityPageProps = {
 };
 
 const statusClasses = {
-  Complete: "bg-[#DDF8EE] text-[#0F8F86]",
-  Running: "bg-[#E8F6F3] text-[#0F8F86]",
+  Complete: "bg-[#DDF8EE] text-[#08766F]",
+  Running: "bg-[#E8F6F3] text-[#08766F]",
   Waiting: "bg-[#F3F4F6] text-[#6B7280]",
   Failed: "bg-[#FEE2E2] text-[#B91C1C]",
 };

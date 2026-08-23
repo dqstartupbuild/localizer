@@ -23,7 +23,7 @@ export function ScreenDiscoveryPanel({
         <div className="flex items-center gap-5 border-b border-[#E5E7EB]">
           <button
             type="button"
-            className="h-9 border-b-2 border-[#0F8F86] text-xs font-medium text-[#0F8F86]"
+            className="h-9 border-b-2 border-[#08766F] text-xs font-medium text-[#08766F]"
           >
             Screens
           </button>
@@ -53,7 +53,7 @@ export function ScreenDiscoveryPanel({
         </div>
         <button
           type="button"
-          className="h-10 w-full rounded-md bg-[#0F8F86] text-xs font-semibold text-white transition hover:bg-[#0D7D75]"
+          className="h-10 w-full rounded-md bg-[#08766F] text-xs font-semibold text-white transition hover:bg-[#0D7D75]"
         >
           Review & Continue to States
         </button>

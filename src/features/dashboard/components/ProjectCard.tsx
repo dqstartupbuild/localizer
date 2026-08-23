@@ -13,7 +13,7 @@ export function ProjectCard({ project, href }: ProjectCardProps) {
   return (
     <article
       className={`rounded-lg border bg-white p-4 ${
-        project.selected ? "border-[#0F8F86]" : "border-[#E5E7EB]"
+        project.selected ? "border-[#08766F]" : "border-[#E5E7EB]"
       }`}
     >
       <div className="flex items-start gap-4">
@@ -38,7 +38,7 @@ export function ProjectCard({ project, href }: ProjectCardProps) {
               {href ? (
                 <Link
                   href={href}
-                  className="rounded-md border border-[#E5E7EB] px-3 py-1.5 text-xs font-semibold text-[#0F8F86] transition hover:bg-[#E8F6F3]"
+                  className="rounded-md border border-[#E5E7EB] px-3 py-1.5 text-xs font-semibold text-[#08766F] transition hover:bg-[#E8F6F3]"
                 >
                   Open
                 </Link>

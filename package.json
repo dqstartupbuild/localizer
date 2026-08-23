@@ -6,14 +6,17 @@
   "scripts": {
     "build": "next build",
     "check": "next lint && tsc --noEmit",
-    "dev": "next dev --turbo",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
-    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
+    "dev": "next dev --turbo --hostname 127.0.0.1",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mjs,md,mdx,json}\" --cache",
+    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mjs,md,mdx,json}\" --cache",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "preview": "next build && next start",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "localizer": "node packages/localizer-cli/src/index.mjs",
+    "test:localizer-roundtrip": "node scripts/localizer-roundtrip.mjs",
+    "test": "npm run test:localizer-roundtrip"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.12.0",

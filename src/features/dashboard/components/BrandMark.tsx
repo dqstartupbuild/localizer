@@ -3,7 +3,7 @@ import { Globe2 } from "lucide-react";
 export function BrandMark() {
   return (
     <div className="flex items-center gap-3">
-      <div className="flex size-9 items-center justify-center rounded-full bg-[#0F8F86] text-white">
+      <div className="flex size-9 items-center justify-center rounded-full bg-[#08766F] text-white">
         <Globe2 size={19} strokeWidth={2.2} />
       </div>
       <div>

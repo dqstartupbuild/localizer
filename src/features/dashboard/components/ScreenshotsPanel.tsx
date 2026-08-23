@@ -38,7 +38,7 @@ export function ScreenshotsPanel({ groups }: ScreenshotsPanelProps) {
                 type="button"
                 className={`h-8 border-b-2 text-xs font-medium ${
                   index === 0
-                    ? "border-[#0F8F86] text-[#0F8F86]"
+                    ? "border-[#08766F] text-[#08766F]"
                     : "border-transparent text-[#6B7280]"
                 }`}
               >
@@ -50,7 +50,7 @@ export function ScreenshotsPanel({ groups }: ScreenshotsPanelProps) {
             <button
               type="button"
               aria-label="Grid screenshot view"
-              className="flex size-7 items-center justify-center rounded bg-[#E8F6F3] text-[#0F8F86]"
+              className="flex size-7 items-center justify-center rounded bg-[#E8F6F3] text-[#08766F]"
             >
               <Grid2X2 size={15} />
             </button>

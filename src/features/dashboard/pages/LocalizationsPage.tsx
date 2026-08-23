@@ -53,7 +53,7 @@ export function LocalizationsPage({ dashboard }: LocalizationsPageProps) {
               <textarea
                 defaultValue="Bienvenido de nuevo"
                 rows={4}
-                className="mt-2 w-full resize-none rounded-md border border-[#E5E7EB] bg-white p-3 text-sm leading-6 text-[#111827] outline-none focus:border-[#0F8F86]"
+                className="mt-2 w-full resize-none rounded-md border border-[#E5E7EB] bg-white p-3 text-sm leading-6 text-[#111827] outline-none focus:border-[#08766F]"
               />
             </label>
             <div className="flex items-center justify-between rounded-lg bg-[#F7F9F8] p-3">

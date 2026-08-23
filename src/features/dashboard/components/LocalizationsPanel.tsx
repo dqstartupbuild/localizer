@@ -41,7 +41,7 @@ export function LocalizationsPanel({ tabs, rows }: LocalizationsPanelProps) {
               className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-[#9CA3AF]"
             />
             <input
-              className="h-9 w-full rounded-md border border-[#E5E7EB] bg-white pr-3 pl-9 text-xs text-[#111827] transition outline-none placeholder:text-[#9CA3AF] focus:border-[#0F8F86]"
+              className="h-9 w-full rounded-md border border-[#E5E7EB] bg-white pr-3 pl-9 text-xs text-[#111827] transition outline-none placeholder:text-[#9CA3AF] focus:border-[#08766F]"
               placeholder="Search translations..."
             />
           </label>

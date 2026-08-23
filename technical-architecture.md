@@ -1547,3 +1547,7 @@ This order gets application localization working before screenshot automation re
 7. Which simulator devices should be the default screenshot set?
 
 8. How should teams handle multiple schemes or white-labeled targets in the MVP?
+
+# CLI/dashboard local-development boundary
+
+The first persistence adapter is a validated JSON repository under `.localizer-dev/`, selected by `LOCALIZER_DATA_DIR` for tests. Application services under `src/server/localizer/services` separate this adapter from the versioned `/api/localizer/v1` transport. Each accepted mutation increments a project revision; translation patches carry an expected revision, and sync bundles use revision-derived ETags. Mutations are serialized only within one Next.js process; this adapter is not a multi-process database. Analysis hashes are canonicalized and recomputed server-side. Source changes retain manual values as `needs_review`, which are excluded from generated bundles until explicitly saved again. This adapter is development-only: the implicit workspace is available only in `development` or `test`; production will require an authenticated identity adapter plus durable database repository.

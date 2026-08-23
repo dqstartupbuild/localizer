@@ -52,7 +52,7 @@ export function ScreenDiscoveryPage({ dashboard }: ScreenDiscoveryPageProps) {
                   <span
                     className={`rounded-full px-2.5 py-1 text-xs font-semibold ${
                       state.selected
-                        ? "bg-[#DDF8EE] text-[#0F8F86]"
+                        ? "bg-[#DDF8EE] text-[#08766F]"
                         : "bg-[#F3F4F6] text-[#6B7280]"
                     }`}
                   >

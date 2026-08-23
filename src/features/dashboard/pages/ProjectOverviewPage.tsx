@@ -52,7 +52,7 @@ export function ProjectOverviewPage({ dashboard }: ProjectOverviewPageProps) {
                     {step.description}
                   </p>
                 </div>
-                <span className="rounded-full bg-[#E8F6F3] px-2.5 py-1 text-xs font-semibold text-[#0F8F86]">
+                <span className="rounded-full bg-[#E8F6F3] px-2.5 py-1 text-xs font-semibold text-[#08766F]">
                   {step.status}
                 </span>
               </div>

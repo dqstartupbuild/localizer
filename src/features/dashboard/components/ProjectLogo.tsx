@@ -6,7 +6,7 @@ type ProjectLogoProps = {
 };
 
 const logoClasses = {
-  calisthenics: "bg-[#0F8F86] text-white",
+  calisthenics: "bg-[#08766F] text-white",
   tweet: "bg-[#F2C94C] text-[#111827]",
   sleep: "bg-[#111827] text-white",
 };

@@ -15,7 +15,7 @@ export function ScreenCandidateRow({ screen }: ScreenCandidateRowProps) {
         aria-label={`${screen.selected ? "Deselect" : "Select"} ${screen.name}`}
         className={`flex size-5 items-center justify-center rounded border ${
           screen.selected
-            ? "border-[#0F8F86] bg-[#0F8F86] text-white"
+            ? "border-[#08766F] bg-[#08766F] text-white"
             : "border-[#D1D5DB] bg-white text-transparent"
         }`}
       >
@@ -27,7 +27,7 @@ export function ScreenCandidateRow({ screen }: ScreenCandidateRowProps) {
           <h3 className="truncate text-xs font-semibold text-[#111827]">
             {screen.name}
           </h3>
-          <a className="text-[11px] font-medium text-[#0F8F86]" href="#">
+          <a className="text-[11px] font-medium text-[#08766F]" href="#">
             View
           </a>
         </div>

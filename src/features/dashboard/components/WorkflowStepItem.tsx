@@ -26,7 +26,7 @@ export function WorkflowStepItem({ step }: WorkflowStepItemProps) {
 
   return (
     <div className="flex min-w-[128px] items-center gap-2 xl:min-w-0">
-      <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#E8F6F3] text-[#0F8F86]">
+      <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#E8F6F3] text-[#08766F]">
         <Icon size={17} />
       </div>
       <div className="min-w-0">

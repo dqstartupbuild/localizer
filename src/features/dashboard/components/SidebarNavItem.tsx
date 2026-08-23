@@ -13,7 +13,7 @@ import {
   Settings,
 } from "lucide-react";
 
-type SidebarIconName =
+export type SidebarIconName =
   | "activity"
   | "camera"
   | "file"
@@ -60,10 +60,10 @@ export function SidebarNavItem({
   return (
     <Link
       href={href}
-      className={`flex h-10 w-full items-center gap-3 rounded-md px-3 text-sm font-medium transition ${
+      className={`flex h-10 w-full items-center gap-3 rounded-md px-3 text-sm transition-colors ${
         active
-          ? "bg-[#E8F6F3] text-[#0F8F86]"
-          : "text-[#374151] hover:bg-[#F7F9F8]"
+          ? "font-semibold text-[#0E716A]"
+          : "font-medium text-[#374151] hover:text-[#0E716A]"
       }`}
     >
       <Icon size={17} strokeWidth={2} />

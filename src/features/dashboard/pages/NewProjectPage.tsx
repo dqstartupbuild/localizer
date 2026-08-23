@@ -25,7 +25,7 @@ export function NewProjectPage({ dashboard }: NewProjectPageProps) {
               </span>
               <input
                 defaultValue="Calisthenics Guppy"
-                className="mt-2 h-11 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-sm text-[#111827] outline-none focus:border-[#0F8F86]"
+                className="mt-2 h-11 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-sm text-[#111827] outline-none focus:border-[#08766F]"
               />
               <span className="mt-2 block text-xs text-[#6B7280]">
                 The app name is never translated.
@@ -35,7 +35,7 @@ export function NewProjectPage({ dashboard }: NewProjectPageProps) {
               <span className="text-sm font-semibold text-[#111827]">
                 Source Locale
               </span>
-              <select className="mt-2 h-11 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-sm text-[#111827] outline-none focus:border-[#0F8F86]">
+              <select className="mt-2 h-11 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-sm text-[#111827] outline-none focus:border-[#08766F]">
                 <option>English (en-US)</option>
               </select>
             </label>

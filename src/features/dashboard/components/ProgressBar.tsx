@@ -6,7 +6,7 @@ type ProgressBarProps = {
 };
 
 const toneClasses = {
-  teal: "bg-[#0F8F86]",
+  teal: "bg-[#08766F]",
   gold: "bg-[#F2C94C]",
 };
 

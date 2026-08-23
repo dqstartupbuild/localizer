@@ -5,7 +5,7 @@ type ScreenThumbProps = {
 };
 
 const accentClasses = {
-  home: "bg-[#0F8F86]",
+  home: "bg-[#08766F]",
   workout: "bg-[#F2C94C]",
   onboarding: "bg-[#60A5FA]",
   progress: "bg-[#34D399]",

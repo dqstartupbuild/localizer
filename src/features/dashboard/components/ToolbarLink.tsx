@@ -9,7 +9,7 @@ type ToolbarLinkProps = {
 };
 
 const variantClasses = {
-  primary: "border-[#0F8F86] bg-[#0F8F86] text-white hover:bg-[#0D7D75]",
+  primary: "border-[#08766F] bg-[#08766F] text-white hover:bg-[#0D7D75]",
   secondary: "border-[#E5E7EB] bg-white text-[#374151] hover:bg-[#F7F9F8]",
   dark: "border-[#111827] bg-[#111827] text-white hover:bg-[#1F2937]",
 };

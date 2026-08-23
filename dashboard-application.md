@@ -152,7 +152,7 @@ Feature panels from the mockup are reused where they map to a real page:
 
 Desktop uses a fixed left sidebar and focused page content. Pages use split layouts only when the secondary content is part of the workflow, such as a selected string editor, state candidates, run details, or settings controls.
 
-Mobile uses compact top navigation and single-column page content. Dense tables and workflow strips can scroll horizontally where the data shape requires it.
+The dashboard is intentionally desktop-only. Below the desktop breakpoint, `AppShell` replaces project navigation and controls with a direct message asking the user to continue from a desktop browser. The marketing site remains responsive and available on mobile. See `docs/features/desktop-only-dashboard.md`.
 
 ## Verification
 
@@ -171,3 +171,7 @@ http://localhost:3001
 ```
 
 Port `3000` is already occupied on this machine, so Next.js selects `3001`.
+
+# Local development connection
+
+The dashboard now runs against a persistent implicit local workspace in development and test. `/projects`, `/projects/new`, project overview, and localizations use the real local project services rather than fixture-only state. The dashboard does not claim it can inspect a developer’s Mac directly: it gives a copyable command and waits for the CLI analysis to arrive. See `docs/features/local-development-cli-dashboard.md`.

@@ -13,7 +13,7 @@ export function LocalizationTabs({ tabs }: LocalizationTabsProps) {
           type="button"
           className={`flex h-10 items-center gap-2 border-b-2 text-xs font-medium transition ${
             tab.active
-              ? "border-[#0F8F86] text-[#0F8F86]"
+              ? "border-[#08766F] text-[#08766F]"
               : "border-transparent text-[#6B7280] hover:text-[#111827]"
           }`}
         >

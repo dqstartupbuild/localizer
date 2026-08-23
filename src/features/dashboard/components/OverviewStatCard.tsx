@@ -5,7 +5,7 @@ type OverviewStatCardProps = {
 };
 
 const toneClasses = {
-  teal: "border-[#0F8F86] bg-[#E8F6F3] text-[#0F8F86]",
+  teal: "border-[#08766F] bg-[#E8F6F3] text-[#08766F]",
   gold: "border-[#F2C94C] bg-[#FFF7D6] text-[#8A6400]",
   slate: "border-[#E5E7EB] bg-[#F7F9F8] text-[#374151]",
 };

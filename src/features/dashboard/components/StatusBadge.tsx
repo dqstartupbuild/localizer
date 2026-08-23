@@ -3,9 +3,9 @@ type StatusBadgeProps = {
 };
 
 const statusClasses = {
-  Approved: "bg-[#DDF8EE] text-[#0F8F86]",
+  Approved: "bg-[#DDF8EE] text-[#08766F]",
   Edited: "bg-[#EEF2FF] text-[#4F46E5]",
-  Selected: "bg-[#DDF8EE] text-[#0F8F86]",
+  Selected: "bg-[#DDF8EE] text-[#08766F]",
   Excluded: "bg-[#F3F4F6] text-[#6B7280]",
 };
 

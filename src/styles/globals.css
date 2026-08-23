@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-inter-sans), ui-sans-serif, system-ui, sans-serif,
+  --font-sans: ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
@@ -13,7 +13,7 @@
 body {
   min-height: 100vh;
   background: #f7f9f8;
-  font-family: var(--font-inter-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
 button,
