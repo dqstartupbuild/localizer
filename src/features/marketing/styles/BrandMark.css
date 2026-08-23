@@ -1,0 +1,5 @@
+.public-brand { align-items: center; color: var(--public-ink); display: inline-flex; font-size: 1.05rem; font-weight: 720; gap: .65rem; letter-spacing: -.04em; text-decoration: none; }
+.public-brand__glyph { align-items: flex-end; display: inline-flex; gap: 2px; height: 20px; }
+.public-brand__glyph i { background: var(--public-teal); display: block; height: 10px; transform: skewY(-22deg); width: 4px; }
+.public-brand__glyph i:nth-child(2) { height: 17px; }
+.public-brand__glyph i:nth-child(3) { height: 13px; }

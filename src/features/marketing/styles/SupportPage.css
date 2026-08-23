@@ -1,0 +1,15 @@
+.support-page { margin: 0 auto; max-width: 1140px; padding: clamp(4rem, 8vw, 8rem) 7vw; }
+.support-page > header { border-bottom: 1px solid var(--public-line); max-width: 52rem; padding-bottom: 3rem; }
+.support-page h1 { font-size: clamp(2.25rem, 4.2vw, 5rem); font-weight: 720; letter-spacing: -.045em; line-height: .98; margin: 0 0 1.4rem; }
+.support-page > header > p { font-size: 1.1rem; line-height: 1.65; margin: 0; }
+.support-page > section { border-bottom: 1px solid #c7d5cd; margin: 0; max-width: 48rem; padding: 2.8rem 0; }
+.support-page h2 { font-size: 1.35rem; letter-spacing: -.035em; margin: 0 0 .8rem; }
+.support-page p, .support-page li, .support-page dd { line-height: 1.7; }
+.support-page a { color: var(--public-teal); font-weight: 750; text-underline-offset: .2em; }
+.support-page code { background: #dce8e0; color: var(--public-forest); font-size: .9em; overflow-wrap: anywhere; padding: .1em .28em; }
+.support-page ol { margin: 0; padding-left: 1.35rem; }
+.support-page dl { margin: 0; }
+.support-page dl > div { border-top: 1px solid #c7d5cd; display: grid; gap: .6rem; grid-template-columns: 9rem 1fr; padding: .8rem 0; }
+.support-page dt, .support-page dd { margin: 0; }
+@media (max-width: 800px) { .support-page { padding-left: 1.4rem; padding-right: 1.4rem; } }
+@media (max-width: 520px) { .support-page dl > div { grid-template-columns: 1fr; gap: .3rem; } }

@@ -6,6 +6,12 @@
 }
 
 :root {
+  --public-ink: #10211e;
+  --public-paper: #eef3ed;
+  --public-forest: #0c2924;
+  --public-teal: #386f67;
+  --public-mist: #c9d7d0;
+  --public-line: #aebfb8;
   color: #111827;
   background: #f7f9f8;
 }

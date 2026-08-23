@@ -1,0 +1,2 @@
+.public-site { background: var(--public-paper); color: var(--public-ink); min-height: 100vh; }
+.public-site :focus-visible { outline: 3px solid #d9933b; outline-offset: 4px; }

@@ -1,12 +1,14 @@
 import { type Metadata } from "next";
 
 import { LandingPage } from "~/features/marketing/pages/LandingPage";
+import { createPageMetadata } from "~/features/marketing/site/createPageMetadata";
 
-export const metadata: Metadata = {
-  title: "Localizer | Localize your app screenshots in 5 minutes",
+export const metadata: Metadata = createPageMetadata({
+  title: "Localizer | Keep the words close to the work",
   description:
-    "Localizer helps indie app developers translate their app, screenshots, and App Store copy from one simple dashboard.",
-};
+    "A local-first, open-source localization workflow for iOS projects.",
+  path: "/",
+});
 
 export default function Home() {
   return <LandingPage />;

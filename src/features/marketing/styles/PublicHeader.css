@@ -1,0 +1,7 @@
+.public-header { background: var(--public-paper); border-bottom: 1px solid var(--public-line); }
+.public-header__inner { align-items: center; display: flex; justify-content: space-between; margin: 0 auto; max-width: 1440px; min-height: 76px; padding: 0 4vw; }
+.public-nav { align-items: center; display: flex; font-size: .92rem; font-weight: 650; gap: 1.4rem; }
+.public-nav a { color: var(--public-ink); text-decoration: none; }
+.public-nav a:hover, .public-action:hover { color: var(--public-teal); }
+.public-action { color: var(--public-ink); font-weight: 750; text-decoration: none; }
+@media (max-width: 800px) { .public-header__inner { min-height: 68px; padding: 0 1.2rem; } .public-nav { gap: .8rem; } .public-nav a:not(.public-action) { display: none; } }

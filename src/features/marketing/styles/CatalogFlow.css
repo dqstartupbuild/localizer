@@ -1,0 +1,10 @@
+.workflow-section { background: var(--public-paper); display: grid; gap: 5rem; grid-template-columns: .8fr 1.2fr; padding: clamp(4rem, 9vw, 10rem) 8vw; }
+.workflow-section h2 { font-size: clamp(2.25rem, 4.2vw, 5rem); font-weight: 720; letter-spacing: -.045em; line-height: .98; margin: 0; }
+.catalog-flow { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
+.catalog-flow__step { background: #d9e6de; min-height: 16rem; padding: 1.4rem; position: relative; }
+.catalog-flow__step:nth-child(2) { background: #b5cdc2; transform: translateY(2.2rem); }
+.catalog-flow__step:nth-child(3) { background: #dce8e0; }
+.catalog-flow__step > span { color: var(--public-teal); display: block; font-size: 1.7rem; line-height: 1; }
+.catalog-flow h3 { font-size: 1.35rem; letter-spacing: -.04em; margin: 3.6rem 0 .7rem; min-height: 4.8rem; }
+.catalog-flow p { color: #405b53; line-height: 1.55; margin: 0; }
+@media (max-width: 800px) { .workflow-section { gap: 3rem; grid-template-columns: 1fr; padding-left: 1.4rem; padding-right: 1.4rem; } .catalog-flow { grid-template-columns: 1fr; } .catalog-flow__step { min-height: auto; } .catalog-flow__step:nth-child(2) { transform: none; } .catalog-flow h3 { margin-top: 1.8rem; min-height: 0; } }

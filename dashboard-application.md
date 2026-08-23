@@ -2,9 +2,9 @@
 
 ## Overview
 
-The Localizer web application is a routed T3 App. The root route is a simple marketing landing page with a looping product demo hero. The supplied mockup is used as a visual reference for dashboard density, hierarchy, color, spacing, tables, cards, and controls, but the product is implemented as actual screens instead of one combined mockup page.
+The Localizer web application is a routed T3 App. The root route is a public marketing site that describes the current local CLI-to-dashboard workflow. The supplied mockup is used as a visual reference for dashboard density, hierarchy, color, spacing, tables, cards, and controls, but the product is implemented as actual screens instead of one combined mockup page.
 
-The app currently represents the MVP dashboard surface for:
+The app currently includes persistent local-development support for project creation, overview, localizations, activity, and the CLI/API loop. The following dashboard surfaces are present as prototype or planned workflow UI and must not be described as shipped automation:
 
 - Project creation and management
 - CLI setup guidance
@@ -40,7 +40,7 @@ The app also uses `lucide-react` for functional dashboard icons and `@playwright
 ## Route Map
 
 ```text
-/                                      -> marketing landing page with autoplay demo hero and /projects CTA
+/                                      -> public marketing page for the local workflow
 /projects                              -> project list and project creation entry point
 /projects/new                          -> create project and CLI setup instructions
 /projects/[projectId]/overview         -> project status, setup workflow, locales, next actions
@@ -104,7 +104,7 @@ src/
 
 ## Page Responsibilities
 
-`LandingPage.tsx` renders the marketing home page with a muted, looping demo video, simple human copy, and the primary dashboard CTA.
+`LandingPage.tsx` renders the public marketing home page around a localization catalog artifact. In development and test its dashboard action opens `/projects`; production public actions point to local setup support instead.
 
 `ProjectsPage.tsx` renders all connected applications and links into each project.
 
@@ -175,3 +175,7 @@ Port `3000` is already occupied on this machine, so Next.js selects `3001`.
 # Local development connection
 
 The dashboard now runs against a persistent implicit local workspace in development and test. `/projects`, `/projects/new`, project overview, and localizations use the real local project services rather than fixture-only state. The dashboard does not claim it can inspect a developer’s Mac directly: it gives a copyable command and waits for the CLI analysis to arrive. See `docs/features/local-development-cli-dashboard.md`.
+
+## Current implementation versus roadmap
+
+Implemented today: a local server, local project persistence, a local CLI, supported SwiftUI literal scanning, manual translation review, and protected String Catalog sync. Not implemented today: hosted accounts, cloud synchronization, automatic translation, source parsing beyond the stated scanner, remote repository import, pull-request automation, screenshot generation, and App Store metadata generation. Prototype pages make the intended direction visible but do not prove those capabilities are available.

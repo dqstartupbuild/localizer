@@ -1,0 +1,25 @@
+# Localizer
+
+Localizer is an MIT-licensed, open-source localization workflow for iOS projects.
+
+## Current behavior
+
+- The local dashboard and CLI work together during development without an account.
+- Source files remain under CLI control in the target repository.
+- The dashboard receives normalized localization data and returns reviewed translation data.
+- `sync` writes `Localizer/Generated/Localizer.xcstrings` in the target repository.
+- The current scanner intentionally supports common SwiftUI string literals. A normalized manifest can cover more complex source.
+
+## Important boundaries
+
+- No hosted authentication, remote repository import, automatic translation, or pull-request automation is implemented.
+- The dashboard is desktop-only. Public marketing and policy routes are responsive.
+- Do not treat prototype dashboard screens as production capabilities.
+
+## Links
+
+- Source: https://github.com/dqstartupbuild/localizer
+- Setup and support: /support
+- Privacy: /privacy
+- Terms: /terms
+- License: /license

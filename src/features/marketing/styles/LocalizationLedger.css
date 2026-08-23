@@ -1,0 +1,17 @@
+.localization-ledger { background: #f6faf5; color: var(--public-ink); margin: 0; padding: 1.2rem; position: relative; transform: rotate(1.5deg); }
+.localization-ledger::after { background: #d9933b; content: ""; height: .6rem; position: absolute; right: 1.1rem; top: -.25rem; transform: skewX(-26deg); width: 3.8rem; }
+.localization-ledger__heading, .localization-ledger__row, .localization-ledger__footnote { align-items: baseline; display: flex; gap: 1rem; justify-content: space-between; }
+.localization-ledger__heading { border-bottom: 1px solid var(--public-line); color: #57726a; font-size: .68rem; font-weight: 700; letter-spacing: .04em; padding: 0 0 .8rem; }
+.localization-ledger__source { background: #dce8e0; margin-top: .8rem; padding: 1rem; }
+.localization-ledger__source span { color: #57726a; display: block; font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.localization-ledger__source strong { display: block; font-size: clamp(1.2rem, 2.5vw, 2rem); letter-spacing: -.045em; line-height: 1.1; margin-top: .42rem; }
+.localization-ledger__rows { margin-top: .8rem; }
+.localization-ledger__row { border-bottom: 1px solid #d3dfd7; font-size: .9rem; padding: .86rem 0; transition: background-color 160ms ease, padding 160ms ease; }
+.localization-ledger__row:hover { background: #e8f0eb; padding-left: .45rem; padding-right: .45rem; }
+.localization-ledger__locale { color: var(--public-teal); font-size: .72rem; font-weight: 800; width: 2rem; }
+.localization-ledger__translation { flex: 1; font-weight: 650; }
+.localization-ledger__state { color: #57726a; font-size: .7rem; text-align: right; }
+.localization-ledger__footnote { color: #57726a; font-size: .76rem; font-weight: 650; justify-content: flex-start; padding-top: .9rem; }
+.localization-ledger__pulse { background: var(--public-teal); border-radius: 50%; display: inline-block; height: .48rem; width: .48rem; }
+@media (prefers-reduced-motion: reduce) { .localization-ledger__row { transition: none; } }
+@media (max-width: 520px) { .localization-ledger { padding: .85rem; } .localization-ledger__heading { align-items: flex-start; flex-direction: column; gap: .25rem; } .localization-ledger__row { align-items: flex-start; flex-wrap: wrap; } .localization-ledger__translation { min-width: calc(100% - 3rem); } .localization-ledger__state { margin-left: 2rem; text-align: left; width: calc(100% - 2rem); } }

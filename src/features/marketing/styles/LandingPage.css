@@ -1,0 +1,9 @@
+.marketing-hero { background: var(--public-forest); color: #f5faf5; display: grid; grid-template-columns: minmax(0, .55fr) minmax(0, 1.4fr) minmax(0, .55fr); min-height: calc(100svh - 76px); overflow: hidden; padding: clamp(3.5rem, 7vw, 7rem) 6vw; position: relative; }
+.marketing-hero::before { background: #12463f; content: ""; height: 20vw; min-height: 180px; position: absolute; right: -4vw; top: 0; transform: skewY(-9deg); width: 48vw; }
+.marketing-hero h1 { align-self: start; font-size: clamp(3.3rem, 7.5vw, 8rem); font-weight: 720; grid-column: 1 / 4; letter-spacing: -.05em; line-height: .9; margin: 0; max-width: 21ch; position: relative; z-index: 1; }
+.marketing-hero__side-copy { align-self: end; color: #c9d7d0; font-size: 1rem; grid-column: 1; line-height: 1.55; margin: 4rem 1.5rem 1rem 0; max-width: 17rem; position: relative; z-index: 1; }
+.marketing-hero__artifact { align-self: center; grid-column: 2 / 4; margin: 2.5rem 0 0; max-width: 58rem; position: relative; transform: translateX(4vw); z-index: 1; }
+.marketing-hero__edge-action { align-self: end; grid-column: 3; justify-self: end; margin-bottom: 1rem; position: relative; white-space: nowrap; z-index: 1; }
+.marketing-hero__edge-action .public-action { color: #f5faf5; display: inline-flex; gap: .65rem; }
+.marketing-hero__edge-action .public-action:hover { color: #9bc9bb; }
+@media (max-width: 800px) { .marketing-hero { grid-template-columns: 1fr; min-height: auto; padding: 4.5rem 1.4rem 5rem; } .marketing-hero h1 { font-size: clamp(2.1rem, 9vw, 4.2rem); grid-column: 1; max-width: none; } .marketing-hero__side-copy { grid-column: 1; margin: 2rem 0 0; max-width: 28rem; order: 1; } .marketing-hero__artifact { grid-column: 1; margin-top: 3rem; transform: translateX(0); } .marketing-hero__edge-action { grid-column: 1; justify-self: start; margin-top: 2rem; } }

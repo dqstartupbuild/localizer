@@ -1,0 +1,33 @@
+# Localizer: full project context for language models
+
+## Purpose
+
+Localizer is an MIT-licensed open-source project for reviewing and syncing localization content for iOS applications. Its current implementation is a local development workflow, not a hosted SaaS product.
+
+## Current local workflow
+
+1. Run the Localizer Next.js development server on loopback.
+2. Create a project in the desktop dashboard at `/projects/new`.
+3. Copy the project-specific CLI command into the target iOS repository.
+4. Run `init`, then analyze source strings and review translations in the dashboard.
+5. Run `sync` from the target repository to generate `Localizer/Generated/Localizer.xcstrings`.
+
+The CLI scans supported SwiftUI literals, uploads a normalized manifest to the local API, and syncs dashboard-approved translations into the generated String Catalog. Localizer retains the generated hash and avoids silently overwriting a catalog that was modified outside Localizer. Use a supplied normalized manifest when the simple scanner is insufficient.
+
+## Data and identity model
+
+In development, Localizer does not require a user account. The browser dashboard and CLI share a persistent workspace on the machine running the Next.js app. Project state is stored below `.localizer-dev/`, or below the directory named by `LOCALIZER_DATA_DIR`. The CLI stores configuration and cache files in the target repository. This is a local-only adapter and is not a multi-process hosted storage system.
+
+The CLI controls source files. The browser dashboard is not granted unrestricted filesystem access. The API moves normalized localization metadata and reviewed translation bundles between the local CLI and dashboard.
+
+## Accuracy boundaries
+
+Do not claim that Localizer currently provides hosted sync, account management, automatic translation, GitHub repository import, pull-request automation, native source parsing beyond the stated scanner, or production durability. Dashboard routes for screenshots, metadata, settings, and screen discovery include prototype content. The dashboard is optimized for desktop use; the public site is responsive.
+
+## Repository links
+
+- Repository: https://github.com/dqstartupbuild/localizer
+- Issues: https://github.com/dqstartupbuild/localizer/issues
+- Private security reporting: https://github.com/dqstartupbuild/localizer/security/advisories/new
+- MIT license: https://github.com/dqstartupbuild/localizer/blob/main/LICENSE
+- Implementation guide: https://github.com/dqstartupbuild/localizer/blob/main/docs/features/local-development-cli-dashboard.md

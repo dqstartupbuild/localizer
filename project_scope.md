@@ -2,6 +2,14 @@
 
 ## Overview
 
+## Current implementation and roadmap
+
+This document contains product scope and future direction. It is not a statement that every listed capability exists today. The current implementation is a local development workflow: a desktop dashboard and local CLI share project state on the machine running Next.js, scan supported SwiftUI string literals, allow manual translation review, and write a protected generated String Catalog back to the target repository.
+
+The following remain roadmap items unless separate implementation documentation says otherwise: hosted accounts, cloud sync, automatic translation, remote repository import, pull-request automation, screenshot generation, App Store metadata generation, broad native source parsing, and a published npm package. Dashboard pages for screenshots, metadata, settings, and screen discovery may show prototype content and must not be represented as shipped automation.
+
+---
+
 Localizer is a developer tool for iOS applications that enables indie developers to localize their apps, App Store metadata, and in-app screenshots from a single dashboard.
 
 The primary goal is to allow a developer to localize an entire iOS application in approximately five minutes without manually managing localization files, translation workflows, screenshot automation, or App Store metadata translations.

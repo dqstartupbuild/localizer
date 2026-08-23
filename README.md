@@ -13,7 +13,7 @@ The CLI scans supported SwiftUI literals, uploads a normalized manifest, and syn
 
 `npm run localizer -- …` is only a convenience command when run from the Localizer checkout itself.
 
-Localizer is a routed T3 App for localizing iOS apps, App Store metadata, and in-app screenshots from one workflow. The root route is a simple marketing landing page, and the dashboard starts at `/projects`.
+Localizer is an MIT-licensed, routed T3 app for a local-first iOS localization workflow. The public site is responsive; the desktop dashboard starts at `/projects`.
 
 ## Docs
 
@@ -22,6 +22,9 @@ Localizer is a routed T3 App for localizing iOS apps, App Store metadata, and in
 - [Design System](./design.md)
 - [Dashboard Application](./dashboard-application.md)
 - [Desktop-only Dashboard](./docs/features/desktop-only-dashboard.md)
+- [Public Marketing Site](./docs/features/marketing-public-site.md)
+- [MIT License](./LICENSE)
+- [Security Policy](./SECURITY.md)
 - [Coding Guidelines](./coding-guidelines.md)
 
 ## Run Locally
@@ -48,7 +51,7 @@ npm run build
 
 ## Current Implementation
 
-The current application includes a non-technical marketing landing page and separate product screens using the mockup as a design reference. Projects, project creation, overview, localizations, activity, and the CLI/API loop use persistent local-development data. Screenshots, metadata, settings, and screen discovery remain dashboard prototypes:
+The current application includes a public marketing and policy site plus separate dashboard screens. Projects, project creation, overview, localizations, activity, and the CLI/API loop use persistent local-development data. Screenshots, metadata, settings, and screen discovery remain dashboard prototypes:
 
 - `/`
 - `/projects`
@@ -63,12 +66,9 @@ The current application includes a non-technical marketing landing page and sepa
 
 Some dashboard prototype data is still served through a typed tRPC mock data router. Production authentication, durable hosted storage, and remote workflows are covered in `technical-architecture.md`.
 
-The landing page hosts the recorded dashboard walkthrough from `public/videos/localizer-dashboard-demo.webm` as a muted, looping hero video. Its primary CTA links to `/projects`.
+## Public pages
 
-## Demo
-
-The current dashboard walkthrough is stored at:
-
-```text
-demos/localizer-dashboard-demo.webm
-```
+- `/` explains the current local CLI-to-dashboard workflow.
+- `/support` provides setup, commands, current limitations, issue reporting, and private security reporting links.
+- `/privacy`, `/terms`, and `/license` document the current data model and MIT licensing boundary.
+- `/sitemap.xml`, `/robots.txt`, `/manifest.webmanifest`, `/llms.txt`, and `/llms-full.txt` support discovery.
