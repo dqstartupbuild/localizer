@@ -18,7 +18,7 @@ const statusClasses = {
 
 export function ActivityPage({ dashboard }: ActivityPageProps) {
   return (
-    <AppShell dashboard={dashboard}>
+    <AppShell dashboardMode="local">
       <PageHeader
         eyebrow="Calisthenics Guppy"
         title="Activity"

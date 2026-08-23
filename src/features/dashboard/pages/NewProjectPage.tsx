@@ -1,17 +1,12 @@
 import { Terminal } from "lucide-react";
-import { type DashboardData } from "~/features/dashboard/types/dashboardData";
 import { AppShell } from "~/features/dashboard/components/AppShell";
 import { PageHeader } from "~/features/dashboard/components/PageHeader";
 import { Panel } from "~/features/dashboard/components/Panel";
 import { ToolbarButton } from "~/features/dashboard/components/ToolbarButton";
 
-type NewProjectPageProps = {
-  dashboard: DashboardData;
-};
-
-export function NewProjectPage({ dashboard }: NewProjectPageProps) {
+export function NewProjectPage() {
   return (
-    <AppShell dashboard={dashboard}>
+    <AppShell dashboardMode="local">
       <PageHeader
         title="Create Project"
         description="Create the Localizer project first, then run the CLI inside the iOS app repository to connect source analysis and generated resources."

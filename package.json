@@ -16,7 +16,8 @@
     "typecheck": "tsc --noEmit",
     "localizer": "node packages/localizer-cli/src/index.mjs",
     "test:localizer-roundtrip": "node scripts/localizer-roundtrip.mjs",
-    "test": "npm run test:localizer-roundtrip"
+    "test:production-preview": "npm run build && node scripts/production-preview.mjs",
+    "test": "npm run test:localizer-roundtrip && npm run test:production-preview"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.12.0",

@@ -19,11 +19,19 @@ export function localizerError(error: unknown) {
     : message.includes("changed")
       ? 409
       : message.includes("unavailable")
-        ? 401
+        ? 503
         : 400;
   return localizerJson(
     {
-      error: { code: status === 409 ? "conflict" : "request_failed", message },
+      error: {
+        code:
+          status === 409
+            ? "conflict"
+            : status === 503
+              ? "service_unavailable"
+              : "request_failed",
+        message,
+      },
     },
     { status },
   );

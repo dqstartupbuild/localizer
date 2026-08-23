@@ -2,15 +2,16 @@ import { AppShell } from "~/features/dashboard/components/AppShell";
 import { CreateProjectForm } from "~/features/dashboard/components/CreateProjectForm";
 import { PageHeader } from "~/features/dashboard/components/PageHeader";
 import { Panel } from "~/features/dashboard/components/Panel";
-import { createLocalDashboard } from "~/features/dashboard/data/createLocalDashboard";
-import { requireDevelopmentWorkspace } from "~/server/localizer/services/requireDevelopmentWorkspace";
+import { ProductionPreviewNewProjectPage } from "~/features/dashboard/pages/ProductionPreviewNewProjectPage";
+import { resolveDashboardWorkspace } from "~/server/localizer/workspace/resolveDashboardWorkspace";
 
 export const dynamic = "force-dynamic";
 
 export default async function NewProjectRoute() {
-  requireDevelopmentWorkspace();
+  if (resolveDashboardWorkspace().mode === "public-preview")
+    return <ProductionPreviewNewProjectPage />;
   return (
-    <AppShell dashboard={createLocalDashboard()}>
+    <AppShell dashboardMode="local">
       <PageHeader
         title="Create project"
         description="Start here. Localizer will keep this project in your local workspace, with no sign-in required during development."

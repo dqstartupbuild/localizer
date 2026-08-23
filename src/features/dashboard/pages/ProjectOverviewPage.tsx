@@ -15,7 +15,7 @@ type ProjectOverviewPageProps = {
 
 export function ProjectOverviewPage({ dashboard }: ProjectOverviewPageProps) {
   return (
-    <AppShell dashboard={dashboard}>
+    <AppShell dashboardMode="local">
       <PageHeader
         eyebrow="Calisthenics Guppy"
         title="Project Overview"

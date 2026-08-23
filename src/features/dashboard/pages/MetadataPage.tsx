@@ -12,7 +12,7 @@ type MetadataPageProps = {
 
 export function MetadataPage({ dashboard }: MetadataPageProps) {
   return (
-    <AppShell dashboard={dashboard}>
+    <AppShell dashboardMode="local">
       <PageHeader
         eyebrow="Calisthenics Guppy"
         title="App Store Metadata"

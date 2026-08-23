@@ -12,7 +12,7 @@ type ProjectsPageProps = {
 
 export function ProjectsPage({ dashboard }: ProjectsPageProps) {
   return (
-    <AppShell dashboard={dashboard}>
+    <AppShell dashboardMode="local">
       <PageHeader
         title="Projects"
         description="Create and manage the iOS apps connected to Localizer. Each project tracks locales, translations, screenshots, metadata, and the latest CLI analysis."

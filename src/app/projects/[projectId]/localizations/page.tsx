@@ -5,9 +5,11 @@ import { Panel } from "~/features/dashboard/components/Panel";
 import { TranslationEditor } from "~/features/dashboard/components/TranslationEditor";
 import { LocaleSelector } from "~/features/dashboard/components/LocaleSelector";
 import { LocalizationStatus } from "~/features/dashboard/components/LocalizationStatus";
-import { createLocalDashboard } from "~/features/dashboard/data/createLocalDashboard";
 import { getProject } from "~/server/localizer/services/getProject";
 import { requireDevelopmentWorkspace } from "~/server/localizer/services/requireDevelopmentWorkspace";
+import { ProductionPreviewLocalizationsPage } from "~/features/dashboard/pages/ProductionPreviewLocalizationsPage";
+import { getProductionPreviewProject } from "~/server/localizer/preview/getProductionPreviewProject";
+import { resolveDashboardWorkspace } from "~/server/localizer/workspace/resolveDashboardWorkspace";
 
 export const dynamic = "force-dynamic";
 
@@ -18,8 +20,14 @@ export default async function LocalizationsRoute({
   params: Promise<{ projectId: string }>;
   searchParams: Promise<{ locale?: string }>;
 }) {
+  const projectId = (await params).projectId;
+  if (resolveDashboardWorkspace().mode === "public-preview") {
+    const project = getProductionPreviewProject(projectId);
+    if (!project) notFound();
+    return <ProductionPreviewLocalizationsPage project={project} />;
+  }
   requireDevelopmentWorkspace();
-  const project = await getProject((await params).projectId);
+  const project = await getProject(projectId);
   if (!project) notFound();
   const targetLocales = project.locales.filter(
     (item) => item !== project.sourceLocale,
@@ -30,7 +38,7 @@ export default async function LocalizationsRoute({
     : targetLocales[0];
   const strings = project.strings;
   return (
-    <AppShell dashboard={createLocalDashboard()} activeProjectId={project.id}>
+    <AppShell dashboardMode="local" activeProjectId={project.id}>
       <PageHeader
         eyebrow={project.name}
         title="Localizations"

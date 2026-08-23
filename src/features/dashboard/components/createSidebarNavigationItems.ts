@@ -1,5 +1,4 @@
 import type { SidebarIconName } from "~/features/dashboard/components/SidebarNavItem";
-
 type SidebarNavigationItem = {
   label: string;
   icon: SidebarIconName;
@@ -9,7 +8,6 @@ type SidebarNavigationItem = {
 
 export function createSidebarNavigationItems(
   activeProjectId: string | undefined,
-  isLocalWorkspace: boolean,
 ): SidebarNavigationItem[] {
   const projectsItem: SidebarNavigationItem = {
     label: "Projects",
@@ -17,7 +15,7 @@ export function createSidebarNavigationItems(
     href: "/projects",
     matchPaths: ["/projects", "/projects/new"],
   };
-  if (isLocalWorkspace && !activeProjectId) return [projectsItem];
+  if (!activeProjectId) return [projectsItem];
   const projectHref = activeProjectId
     ? `/projects/${activeProjectId}`
     : "/projects";
@@ -31,21 +29,5 @@ export function createSidebarNavigationItems(
     },
     { label: "Activity", icon: "activity", href: `${projectHref}/activity` },
   ];
-  if (isLocalWorkspace) return connectedItems;
-  return [
-    ...connectedItems.slice(0, 3),
-    {
-      label: "Screen Discovery",
-      icon: "scan",
-      href: `${projectHref}/screen-discovery`,
-    },
-    {
-      label: "Screenshots",
-      icon: "camera",
-      href: `${projectHref}/screenshots`,
-    },
-    { label: "Metadata", icon: "file", href: `${projectHref}/metadata` },
-    connectedItems[3]!,
-    { label: "Settings", icon: "settings", href: "/settings" },
-  ];
+  return connectedItems;
 }

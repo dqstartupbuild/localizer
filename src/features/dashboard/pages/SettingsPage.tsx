@@ -11,7 +11,7 @@ type SettingsPageProps = {
 
 export function SettingsPage({ dashboard }: SettingsPageProps) {
   return (
-    <AppShell dashboard={dashboard}>
+    <AppShell dashboardMode="local">
       <PageHeader
         title="Settings"
         description="Control project locales, protected terms, generated resource behavior, and build-time generation defaults."

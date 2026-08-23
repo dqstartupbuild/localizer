@@ -13,7 +13,7 @@ type ScreenshotsPageProps = {
 
 export function ScreenshotsPage({ dashboard }: ScreenshotsPageProps) {
   return (
-    <AppShell dashboard={dashboard}>
+    <AppShell dashboardMode="local">
       <PageHeader
         eyebrow="Calisthenics Guppy"
         title="Screenshots"

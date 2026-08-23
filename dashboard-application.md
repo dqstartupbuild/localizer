@@ -17,7 +17,7 @@ The app currently includes persistent local-development support for project crea
 - Activity and run status
 - Build-generation settings
 
-The implementation uses typed mock data served through tRPC. This keeps every page wired through a realistic server boundary while persistent storage and production job execution remain future work.
+Development and test use persistent local project services for the implemented project, overview, localization, activity, and CLI workflow. Prototype-only screens use typed tRPC fixture data in local development. Production blocks that fixture endpoint and exposes only the bundled, schema-validated, read-only sample preview.
 
 ## Stack
 
@@ -54,21 +54,15 @@ The app also uses `lucide-react` for functional dashboard icons and `@playwright
 
 ## Data Flow
 
-Dashboard routes fetch the current dashboard model server-side through tRPC:
+Implemented local workflow routes call the local project services directly. Prototype-only local routes use the typed tRPC fixture. Production preview routes read the bundled sample project and never call the local repository or fixture endpoint.
 
 ```text
-src/app/**/page.tsx
-  -> api.dashboard.summary()
-  -> src/server/api/routers/dashboard.ts
-  -> src/server/data/dashboardData.ts
-  -> page component
+development project route -> local project service -> .localizer-dev project state
+development prototype route -> api.dashboard.summary() -> dashboardData fixture
+production preview route -> productionPreviewProject -> read-only preview page
 ```
 
-The shared data contract lives in:
-
-```text
-src/features/dashboard/types/dashboardData.ts
-```
+The shared prototype data contract lives in `src/features/dashboard/types/dashboardData.ts`. The production sample is validated by the existing project-state schema before it renders.
 
 ## File Tree
 
@@ -104,7 +98,7 @@ src/
 
 ## Page Responsibilities
 
-`LandingPage.tsx` renders the public marketing home page around a localization catalog artifact. In development and test its dashboard action opens `/projects`; production public actions point to local setup support instead.
+`LandingPage.tsx` renders the public marketing home page around a localization catalog artifact. Its dashboard action opens `/projects`. Development and test show the writable local workspace; production shows the read-only public sample preview.
 
 `ProjectsPage.tsx` renders all connected applications and links into each project.
 
@@ -175,6 +169,8 @@ Port `3000` is already occupied on this machine, so Next.js selects `3001`.
 # Local development connection
 
 The dashboard now runs against a persistent implicit local workspace in development and test. `/projects`, `/projects/new`, project overview, and localizations use the real local project services rather than fixture-only state. The dashboard does not claim it can inspect a developer’s Mac directly: it gives a copyable command and waits for the CLI analysis to arrive. See `docs/features/local-development-cli-dashboard.md`.
+
+In production, `/projects` uses bundled sample data and exposes only Projects, Overview, Localizations, and Activity as read-only pages. Project creation explains how to run Localizer locally. Prototype metadata, screen discovery, screenshot, and settings routes return 404, and the development tRPC fixture is unavailable. See `docs/features/production-public-preview.md`.
 
 ## Current implementation versus roadmap
 

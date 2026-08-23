@@ -6,6 +6,8 @@ The Localizer marketing site remains available at every viewport size. Dashboard
 
 The mobile message is visible immediately and does not depend on JavaScript, device detection, or an entrance animation. The dashboard remains mounted only as hidden responsive content, so its controls are not exposed visually or to assistive technology below the breakpoint.
 
+The final line is mode-aware: local development explains that local work stays saved, while production explains that the public preview uses read-only sample data.
+
 ## Why
 
 Localization review, project navigation, source occurrences, and generated-file guidance need more horizontal space than a phone provides. A direct desktop notice is clearer than compressing the workspace into controls that are difficult to read or operate.
@@ -14,6 +16,7 @@ Localization review, project navigation, source occurrences, and generated-file 
 
 - `src/features/dashboard/components/DesktopOnlyDashboardNotice.tsx` owns the narrow-screen message.
 - `src/features/dashboard/components/AppShell.tsx` switches between the notice and the dashboard at Tailwind's `lg` breakpoint.
+- `src/features/dashboard/types/DashboardMode.ts` keeps local-workspace and public-preview copy explicit without inferring access policy from user-facing text.
 - The breakpoint is viewport-based, so resized desktop windows receive the same honest guidance when there is not enough room.
 - The notice contains no dead action. Users simply reopen the same dashboard URL on a desktop browser.
 

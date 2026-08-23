@@ -13,7 +13,7 @@ type LocalizationsPageProps = {
 
 export function LocalizationsPage({ dashboard }: LocalizationsPageProps) {
   return (
-    <AppShell dashboard={dashboard}>
+    <AppShell dashboardMode="local">
       <PageHeader
         eyebrow="Calisthenics Guppy"
         title="Localizations"

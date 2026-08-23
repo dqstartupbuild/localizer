@@ -9,7 +9,8 @@ export function SupportPage() {
           <p>
             Localizer is early, local-first software. The support path is the
             repository, the local dashboard, and a short set of commands you can
-            inspect.
+            inspect. The hosted dashboard is a read-only preview with sample
+            data; create and edit projects from your own local dashboard.
           </p>
         </header>
         <section>

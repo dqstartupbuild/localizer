@@ -1,6 +1,11 @@
 import { BrandMark } from "~/features/dashboard/components/BrandMark";
+import type { DashboardMode } from "~/features/dashboard/types/DashboardMode";
 
-export function DesktopOnlyDashboardNotice() {
+type DesktopOnlyDashboardNoticeProps = { dashboardMode: DashboardMode };
+
+export function DesktopOnlyDashboardNotice({
+  dashboardMode,
+}: DesktopOnlyDashboardNoticeProps) {
   return (
     <section
       aria-labelledby="desktop-only-title"
@@ -22,7 +27,11 @@ export function DesktopOnlyDashboardNotice() {
           </p>
         </div>
       </div>
-      <p className="text-sm text-[#4B5563]">Your local work stays saved.</p>
+      <p className="text-sm text-[#4B5563]">
+        {dashboardMode === "public-preview"
+          ? "The public preview uses read-only sample data."
+          : "Your local work stays saved."}
+      </p>
     </section>
   );
 }

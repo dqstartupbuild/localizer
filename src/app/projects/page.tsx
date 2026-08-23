@@ -2,17 +2,18 @@ import Link from "next/link";
 import { AppShell } from "~/features/dashboard/components/AppShell";
 import { PageHeader } from "~/features/dashboard/components/PageHeader";
 import { Panel } from "~/features/dashboard/components/Panel";
-import { createLocalDashboard } from "~/features/dashboard/data/createLocalDashboard";
+import { ProductionPreviewProjectsPage } from "~/features/dashboard/pages/ProductionPreviewProjectsPage";
 import { listProjects } from "~/server/localizer/services/listProjects";
-import { requireDevelopmentWorkspace } from "~/server/localizer/services/requireDevelopmentWorkspace";
+import { resolveDashboardWorkspace } from "~/server/localizer/workspace/resolveDashboardWorkspace";
 
 export const dynamic = "force-dynamic";
 
 export default async function ProjectsRoute() {
-  requireDevelopmentWorkspace();
+  if (resolveDashboardWorkspace().mode === "public-preview")
+    return <ProductionPreviewProjectsPage />;
   const projects = await listProjects();
   return (
-    <AppShell dashboard={createLocalDashboard()}>
+    <AppShell dashboardMode="local">
       <PageHeader
         title="Projects"
         description="Your local development workspace is saved on this machine. Connect an iOS repository with the CLI when a project is ready."

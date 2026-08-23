@@ -4,12 +4,14 @@ import { headers } from "next/headers";
 import { AppShell } from "~/features/dashboard/components/AppShell";
 import { PageHeader } from "~/features/dashboard/components/PageHeader";
 import { Panel } from "~/features/dashboard/components/Panel";
-import { createLocalDashboard } from "~/features/dashboard/data/createLocalDashboard";
 import { getProject } from "~/server/localizer/services/getProject";
 import { requireDevelopmentWorkspace } from "~/server/localizer/services/requireDevelopmentWorkspace";
 import { createTargetRepositoryInitCommand } from "~/server/localizer/cli/createTargetRepositoryInitCommand";
 import { createTargetRepositorySyncCommand } from "~/server/localizer/cli/createTargetRepositorySyncCommand";
 import { getLocalDashboardOrigin } from "~/server/localizer/cli/getLocalDashboardOrigin";
+import { ProductionPreviewProjectOverviewPage } from "~/features/dashboard/pages/ProductionPreviewProjectOverviewPage";
+import { getProductionPreviewProject } from "~/server/localizer/preview/getProductionPreviewProject";
+import { resolveDashboardWorkspace } from "~/server/localizer/workspace/resolveDashboardWorkspace";
 
 export const dynamic = "force-dynamic";
 
@@ -18,8 +20,14 @@ export default async function ProjectOverviewRoute({
 }: {
   params: Promise<{ projectId: string }>;
 }) {
+  const projectId = (await params).projectId;
+  if (resolveDashboardWorkspace().mode === "public-preview") {
+    const project = getProductionPreviewProject(projectId);
+    if (!project) notFound();
+    return <ProductionPreviewProjectOverviewPage project={project} />;
+  }
   requireDevelopmentWorkspace();
-  const project = await getProject((await params).projectId);
+  const project = await getProject(projectId);
   if (!project) notFound();
   const dashboardOrigin = getLocalDashboardOrigin(await headers());
   const command = createTargetRepositoryInitCommand(
@@ -32,7 +40,7 @@ export default async function ProjectOverviewRoute({
     (item) => !item.stale && item.translations.length > 0,
   ).length;
   return (
-    <AppShell dashboard={createLocalDashboard()} activeProjectId={project.id}>
+    <AppShell dashboardMode="local" activeProjectId={project.id}>
       <PageHeader
         eyebrow={project.name}
         title="Project overview"

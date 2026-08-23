@@ -12,7 +12,7 @@ type ScreenDiscoveryPageProps = {
 
 export function ScreenDiscoveryPage({ dashboard }: ScreenDiscoveryPageProps) {
   return (
-    <AppShell dashboard={dashboard}>
+    <AppShell dashboardMode="local">
       <PageHeader
         eyebrow="Calisthenics Guppy"
         title="Screen Discovery"

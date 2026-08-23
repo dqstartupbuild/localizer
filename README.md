@@ -15,6 +15,13 @@ The CLI scans supported SwiftUI literals, uploads a normalized manifest, and syn
 
 Localizer is an MIT-licensed, routed T3 app for a local-first iOS localization workflow. The public site is responsive; the desktop dashboard starts at `/projects`.
 
+In production, `/projects` is a clearly labeled, read-only public preview with
+bundled sample data. It accepts no CLI or write requests and does not represent
+hosted project storage. Only its sample overview, localizations, and activity
+views are available; prototype metadata, screen discovery, screenshots, and
+settings routes return 404. Use the local development dashboard for persistent
+work.
+
 ## Docs
 
 - [Project Scope](./project_scope.md)
@@ -22,6 +29,7 @@ Localizer is an MIT-licensed, routed T3 app for a local-first iOS localization w
 - [Design System](./design.md)
 - [Dashboard Application](./dashboard-application.md)
 - [Desktop-only Dashboard](./docs/features/desktop-only-dashboard.md)
+- [Production Public Preview](./docs/features/production-public-preview.md)
 - [Public Marketing Site](./docs/features/marketing-public-site.md)
 - [MIT License](./LICENSE)
 - [Security Policy](./SECURITY.md)
@@ -51,7 +59,7 @@ npm run build
 
 ## Current Implementation
 
-The current application includes a public marketing and policy site plus separate dashboard screens. Projects, project creation, overview, localizations, activity, and the CLI/API loop use persistent local-development data. Screenshots, metadata, settings, and screen discovery remain dashboard prototypes:
+The current application includes a public marketing and policy site plus separate dashboard screens. In development and test, projects, project creation, overview, localizations, activity, and the CLI/API loop use persistent local-development data. In production, the linked dashboard routes show one read-only bundled sample project. Screenshots, metadata, settings, and screen discovery remain dashboard prototypes:
 
 - `/`
 - `/projects`
@@ -64,7 +72,7 @@ The current application includes a public marketing and policy site plus separat
 - `/projects/calisthenics-guppy/activity`
 - `/settings`
 
-Some dashboard prototype data is still served through a typed tRPC mock data router. Production authentication, durable hosted storage, and remote workflows are covered in `technical-architecture.md`.
+Some dashboard prototype data is still served through a typed tRPC mock data router in local development only. Production authentication, durable hosted storage, and remote workflows are covered in `technical-architecture.md`.
 
 ## Public pages
 

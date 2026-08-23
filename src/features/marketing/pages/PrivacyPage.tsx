@@ -39,6 +39,15 @@ export function PrivacyPage() {
           </p>
         </section>
         <section>
+          <h2>Public production preview</h2>
+          <p>
+            The hosted dashboard shows bundled read-only sample data so you can
+            explore the interface without an account. It does not accept
+            projects, translations, or CLI requests, and it does not save work
+            entered through the preview because editing is unavailable there.
+          </p>
+        </section>
+        <section>
           <h2>If you host Localizer</h2>
           <p>
             A hosting provider may create standard server, security, or access
