@@ -6,93 +6,85 @@ export function PrivacyPage() {
     <PublicPageShell>
       <LegalArticle
         title="Privacy"
-        description="What Localizer handles today, written for the local development workflow that currently exists. Last updated: August 23, 2026."
+        description="Localizer does not need an account. Here is what it stores and where. Last updated: August 23, 2026."
       >
         <section>
-          <h2>The short version</h2>
+          <h2>No account and no Localizer tracking</h2>
           <p>
-            Localizer does not currently require an account, publish a hosted
-            sync service, or include Localizer analytics or advertising cookies.
-            In development, project data stays on the machine running the
-            Next.js app unless you choose to share it yourself.
+            Localizer does not require an account. It does not use Localizer
+            analytics or advertising cookies. When you run Localizer yourself,
+            your project data stays on that computer unless you share it.
           </p>
         </section>
         <section>
-          <h2>Local development data</h2>
+          <h2>Data saved on your computer</h2>
           <p>
-            The local dashboard stores one project state file per project in{" "}
-            <code>.localizer-dev/</code>, or in the folder named by{" "}
-            <code>LOCALIZER_DATA_DIR</code>. The CLI stores its project
-            configuration and translation cache in the target repository. Those
-            files are local development data; they are not sent to a
-            Localizer-hosted account service because one is not implemented.
+            The dashboard saves each project in <code>.localizer-dev/</code>, or
+            in the folder set by <code>LOCALIZER_DATA_DIR</code>. The CLI saves
+            its settings and translation cache inside your iOS project.
+            Localizer does not upload these files to an account service.
           </p>
         </section>
         <section>
-          <h2>What moves between the CLI and dashboard</h2>
+          <h2>Data sent between the CLI and dashboard</h2>
           <p>
-            The local CLI sends normalized localization metadata to the local
-            dashboard API and receives reviewed translation data. The CLI
-            retains control of source files and writes generated catalog output
-            inside the target repository. The browser is not given unrestricted
-            access to your filesystem.
+            The CLI sends the app text and related details to the dashboard. The
+            dashboard sends your checked translations back to the CLI. The CLI
+            writes the Xcode String Catalog inside your iOS project. The browser
+            cannot browse the rest of your files.
           </p>
         </section>
         <section>
-          <h2>Public production preview</h2>
+          <h2>Hosted dashboard</h2>
           <p>
-            The hosted dashboard shows bundled read-only sample data so you can
-            explore the interface without an account. It does not accept
-            projects, translations, or CLI requests, and it does not save work
-            entered through the preview because editing is unavailable there.
+            The hosted dashboard only shows sample data. You cannot upload,
+            edit, or save a project there. It does not accept CLI requests.
           </p>
         </section>
         <section>
-          <h2>If you host Localizer</h2>
+          <h2>If you host it yourself</h2>
           <p>
-            A hosting provider may create standard server, security, or access
-            logs while serving a hosted instance. Those practices depend on the
-            provider and configuration you choose. Review your provider’s
-            privacy documentation before exposing an instance to other people.
+            Your hosting company may keep normal server, security, or access
+            logs. Check that company&apos;s privacy policy before you let other
+            people use your copy of Localizer.
           </p>
         </section>
         <section>
-          <h2>Third-party sites</h2>
+          <h2>GitHub</h2>
           <p>
-            GitHub links are provided for source code, issues, and private
-            security reports. GitHub handles information you submit there under
-            its own policies.
+            Localizer links to GitHub for the code, issues, and private security
+            reports. GitHub uses its own privacy policy for anything you submit
+            there.
           </p>
         </section>
         <section>
-          <h2>Changes</h2>
+          <h2>Policy changes</h2>
           <p>
-            When the implemented data model changes, this page should change
-            with it. The source repository is the current record of the
-            application’s behavior.
+            This page will change if Localizer starts handling data differently.
+            You can use the GitHub history to see what changed.
           </p>
         </section>
         <section>
-          <h2>Control or delete local data</h2>
+          <h2>Delete local data</h2>
           <p>
-            You control local development data on your machine. Stop the local
-            server, then remove the relevant project folder from
-            <code>.localizer-dev/projects/</code> or the folder configured by
-            <code>LOCALIZER_DATA_DIR</code>. In a target repository, review and
-            remove <code>.localizer/</code> and generated Localizer files if
-            they are no longer wanted. Keep a backup if you may need the data.
+            Stop Localizer, then delete the project folder from
+            <code>.localizer-dev/projects/</code> or from the folder set by
+            <code>LOCALIZER_DATA_DIR</code>. In your iOS project, delete
+            <code>.localizer/</code> and the generated Localizer files if you no
+            longer want them. Make a backup first if you may need the data
+            later.
           </p>
         </section>
         <section>
-          <h2>Questions and reports</h2>
+          <h2>Questions</h2>
           <p>
-            Ask implementation questions in the{" "}
+            Ask questions in the{" "}
             <a href="https://github.com/dqstartupbuild/localizer/issues">
               GitHub issue tracker
             </a>
-            . For a privacy or security concern that should not be public, use{" "}
+            . For a private privacy or security concern, use{" "}
             <a href="https://github.com/dqstartupbuild/localizer/security/advisories/new">
-              GitHub private vulnerability reporting
+              GitHub&apos;s private security form
             </a>
             .
           </p>

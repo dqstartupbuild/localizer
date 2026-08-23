@@ -7,7 +7,7 @@
 .support-page p, .support-page li, .support-page dd { line-height: 1.7; }
 .support-page a { color: var(--public-teal); font-weight: 750; text-underline-offset: .2em; }
 .support-page code { background: #dce8e0; color: var(--public-forest); font-size: .9em; overflow-wrap: anywhere; padding: .1em .28em; }
-.support-page ol { margin: 0; padding-left: 1.35rem; }
+.support-page ol { list-style: decimal; margin: 0; padding-left: 1.35rem; }
 .support-page dl { margin: 0; }
 .support-page dl > div { border-top: 1px solid #c7d5cd; display: grid; gap: .6rem; grid-template-columns: 9rem 1fr; padding: .8rem 0; }
 .support-page dt, .support-page dd { margin: 0; }

@@ -13,7 +13,7 @@ export function LocaleSelector({ locales, value }: LocaleSelectorProps) {
   const searchParams = useSearchParams();
   return (
     <label className="flex items-center gap-2 text-sm font-medium text-[#374151]">
-      Locale
+      Language
       <select
         value={value}
         onChange={(event) => {

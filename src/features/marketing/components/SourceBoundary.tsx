@@ -4,22 +4,27 @@ export function SourceBoundary() {
       className="source-boundary"
       aria-labelledby="source-boundary-title"
     >
-      <p className="source-boundary__index">Your code stays your code.</p>
+      <p className="source-boundary__index">
+        Your source code stays on your computer.
+      </p>
       <div>
-        <h2 id="source-boundary-title">Your files stay where you work.</h2>
+        <h2 id="source-boundary-title">
+          The dashboard never reads your project files.
+        </h2>
         <p>
-          Today, the CLI controls source files in your repository. The dashboard
-          works with a normalized catalog and returns a reviewed sync bundle.
-          There is no account required for the local development workflow.
+          The CLI runs inside your iOS project. It sends the app text, its key,
+          and where it appears in your project. It does not send your full
+          project files. When you are done, the CLI writes the saved
+          translations back to your project. You do not need an account.
         </p>
       </div>
       <div
         className="source-boundary__diagram"
         aria-label="Localizer data boundary"
       >
-        <span>iOS repository</span>
+        <span>iOS project</span>
         <b>CLI</b>
-        <span>local dashboard</span>
+        <span>dashboard</span>
       </div>
     </section>
   );

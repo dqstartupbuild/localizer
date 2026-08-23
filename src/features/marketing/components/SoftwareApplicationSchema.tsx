@@ -9,7 +9,7 @@ export function SoftwareApplicationSchema() {
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Web",
     description:
-      "A local-first, open-source localization workflow for iOS projects.",
+      "Check translations for an iOS app and sync them back to Xcode.",
     ...(siteUrl ? { url: siteUrl.toString() } : {}),
     codeRepository: "https://github.com/dqstartupbuild/localizer",
     license: "https://opensource.org/license/mit",

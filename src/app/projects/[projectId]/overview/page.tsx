@@ -46,8 +46,8 @@ export default async function ProjectOverviewRoute({
         title="Project overview"
         description={
           project.analysis
-            ? "This project is connected. Review its latest extracted strings, save translations, then sync a native String Catalog."
-            : "This project is waiting for its first analysis from the Localizer CLI."
+            ? "Localizer found text in this app. Check the translations, then run sync to write them back to Xcode."
+            : "Run the CLI command below so Localizer can find text in this app."
         }
         actions={
           <Link
@@ -59,40 +59,38 @@ export default async function ProjectOverviewRoute({
         }
       />
       <div className="grid gap-4 md:grid-cols-3">
-        <Panel title="Source strings">
+        <Panel title="App strings">
           <p className="text-3xl font-semibold">{activeCount}</p>
           <p className="mt-1 text-sm text-[#6B7280]">
-            from the latest accepted analysis
+            found by the latest scan
           </p>
         </Panel>
-        <Panel title="Manual translations">
+        <Panel title="Translated strings">
           <p className="text-3xl font-semibold">{translated}</p>
           <p className="mt-1 text-sm text-[#6B7280]">
-            source strings with an approved value
+            with a saved translation
           </p>
         </Panel>
-        <Panel title="Revision">
+        <Panel title="Project version">
           <p className="text-3xl font-semibold">{project.revision}</p>
-          <p className="mt-1 text-sm text-[#6B7280]">
-            changes are protected from stale edits
-          </p>
+          <p className="mt-1 text-sm text-[#6B7280]">number of saved changes</p>
         </Panel>
       </div>
       <div className="mt-4 grid gap-4 xl:grid-cols-[minmax(0,1fr)_minmax(320px,.65fr)]">
-        <Panel title="Connect your iOS repository">
+        <Panel title="Connect your iOS project">
           <p className="mb-3 text-sm leading-6 text-[#6B7280]">
-            Run this from the repository root. It creates local configuration
-            and uploads the first conservative SwiftUI scan.
+            Run this command from the top folder of your iOS project. It saves
+            the Localizer setup and sends the app text to this dashboard.
           </p>
           <code className="block overflow-x-auto rounded-md bg-[#17201f] p-4 text-sm text-white">
             {command}
           </code>
           <p className="mt-3 text-xs text-[#6B7280]">
-            Use <code>{syncCommand}</code> after saving translations to generate{" "}
-            <code>Localizer/Generated/Localizer.xcstrings</code>.
+            After you save translations, run <code>{syncCommand}</code> to
+            create <code>Localizer/Generated/Localizer.xcstrings</code>.
           </p>
         </Panel>
-        <Panel title="Latest analysis">
+        <Panel title="Latest scan">
           {project.analysis ? (
             <div className="space-y-2 text-sm text-[#6B7280]">
               <p>
@@ -110,8 +108,8 @@ export default async function ProjectOverviewRoute({
             </div>
           ) : (
             <p className="text-sm leading-6 text-[#6B7280]">
-              No analysis has arrived yet. The dashboard cannot scan your Mac by
-              itself, so run the command shown here from the iOS repository.
+              The CLI has not scanned this app yet. Run the command shown here
+              inside your iOS project.
             </p>
           )}
         </Panel>

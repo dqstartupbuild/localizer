@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Localizer is an MIT-licensed open-source project for reviewing and syncing localization content for iOS applications. Its current implementation is a local development workflow, not a hosted SaaS product.
+Localizer helps users check translations for an iOS app and sync them back to Xcode. It is free and open source under the MIT License. The working version runs on the user's computer; the hosted dashboard is only a read-only demo.
 
 ## Current local workflow
 

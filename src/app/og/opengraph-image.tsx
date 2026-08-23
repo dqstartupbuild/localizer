@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Localizer translation catalog with reviewed locale rows";
+export const alt = "Localizer helps you check iOS app translations";
 export const contentType = "image/png";
 export const size = { width: 1200, height: 630 };
 
@@ -27,7 +27,7 @@ export default function OpenGraphImage() {
           letterSpacing: 4,
         }}
       >
-        LOCALIZER · OPEN-SOURCE IOS LOCALIZATION
+        LOCALIZER · IOS APP TRANSLATIONS
       </div>
       <div
         style={{
@@ -47,7 +47,7 @@ export default function OpenGraphImage() {
               lineHeight: 0.95,
             }}
           >
-            Keep the words close to the work.
+            Review your iOS app translations.
           </div>
           <div
             style={{
@@ -57,8 +57,8 @@ export default function OpenGraphImage() {
               marginTop: 30,
             }}
           >
-            Review a local catalog. Sync approved language back to your iOS
-            project.
+            Find app text with the CLI. Check translations in the dashboard.
+            Sync them back to Xcode.
           </div>
         </div>
         <div
@@ -84,7 +84,7 @@ export default function OpenGraphImage() {
             }}
           >
             <span>Localizer.xcstrings</span>
-            <span>3 locales</span>
+            <span>3 languages</span>
           </div>
           <div
             style={{
@@ -96,7 +96,7 @@ export default function OpenGraphImage() {
             }}
           >
             <span style={{ color: "#57726a", fontSize: 14 }}>
-              SOURCE STRING
+              ORIGINAL TEXT
             </span>
             <span style={{ fontSize: 26, fontWeight: 700, marginTop: 8 }}>
               Start your next habit
@@ -112,7 +112,7 @@ export default function OpenGraphImage() {
             }}
           >
             <span style={{ color: "#08766f", fontWeight: 700 }}>ES</span>
-            <span>reviewed</span>
+            <span>checked</span>
           </div>
           <div
             style={{

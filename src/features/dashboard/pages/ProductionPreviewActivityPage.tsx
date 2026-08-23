@@ -13,29 +13,27 @@ export function ProductionPreviewActivityPage({
     <AppShell dashboardMode="public-preview" activeProjectId={project.id}>
       <PageHeader
         title="Activity"
-        description="A representative history for the bundled project, not a record of your work."
+        description="These are example events. They are not your project history."
       />
       <ProductionPreviewNotice />
       <div className="space-y-4">
-        <Panel title="Sample analysis accepted">
+        <Panel title="Sample scan completed">
           <p className="text-sm text-[#111827]">{project.analysis?.runId}</p>
           <p className="mt-1 text-sm text-[#6B7280]">
-            Sample CLI {project.analysis?.cliVersion} · {project.strings.length}{" "}
-            source strings
+            CLI {project.analysis?.cliVersion} found {project.strings.length}{" "}
+            app strings
           </p>
         </Panel>
         {project.strings.flatMap((source) =>
           source.translations.map((translation) => (
             <Panel
               key={`${source.stableKey}-${translation.locale}`}
-              title={`Sample ${translation.locale} translation approved`}
+              title={`${translation.locale} translation saved`}
             >
               <p className="text-sm text-[#111827]">
                 {source.stableKey}: {translation.value}
               </p>
-              <p className="mt-1 text-xs text-[#6B7280]">
-                Bundled sample record
-              </p>
+              <p className="mt-1 text-xs text-[#6B7280]">Example event</p>
             </Panel>
           )),
         )}

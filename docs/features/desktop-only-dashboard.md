@@ -6,7 +6,7 @@ The Localizer marketing site remains available at every viewport size. Dashboard
 
 The mobile message is visible immediately and does not depend on JavaScript, device detection, or an entrance animation. The dashboard remains mounted only as hidden responsive content, so its controls are not exposed visually or to assistive technology below the breakpoint.
 
-The final line is mode-aware: local development explains that local work stays saved, while production explains that the public preview uses read-only sample data.
+The final line is mode-aware: the local version says that work is saved on this computer, while production says that the demo uses sample data.
 
 ## Why
 

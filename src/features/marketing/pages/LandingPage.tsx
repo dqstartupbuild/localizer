@@ -13,10 +13,11 @@ export function LandingPage() {
         <SoftwareApplicationSchema />
         <section className="marketing-hero">
           <p className="marketing-hero__side-copy">
-            Localizer turns a local iOS project into a reviewable translation
-            catalog, then writes approved language back where your app lives.
+            The CLI finds text in your SwiftUI app. Check each translation in
+            the dashboard, then sync an Xcode String Catalog back to your
+            project.
           </p>
-          <h1>Keep the words close to the work.</h1>
+          <h1>Review your iOS app translations.</h1>
           <div className="marketing-hero__artifact">
             <LocalizationLedger />
           </div>
@@ -27,7 +28,7 @@ export function LandingPage() {
         <SourceBoundary />
         <section className="workflow-section" aria-labelledby="workflow-title">
           <header>
-            <h2 id="workflow-title">Read. Review. Return.</h2>
+            <h2 id="workflow-title">How it works</h2>
           </header>
           <CatalogFlow />
         </section>

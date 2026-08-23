@@ -65,12 +65,12 @@ export function CreateProjectForm() {
           className="mt-2 h-11 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-sm outline-none focus:border-[#08766F]"
         />
         <span className="mt-2 block text-xs text-[#6B7280]">
-          This name stays in your local workspace and is never translated.
+          This name is only used in the dashboard. It will not be translated.
         </span>
       </label>
       <label className="block">
         <span className="text-sm font-semibold text-[#111827]">
-          Source locale
+          Original language
         </span>
         <select
           name="sourceLocale"
@@ -82,7 +82,7 @@ export function CreateProjectForm() {
       </label>
       <label className="block">
         <span className="text-sm font-semibold text-[#111827]">
-          Target locales
+          Translation languages
         </span>
         <select
           name="locales"

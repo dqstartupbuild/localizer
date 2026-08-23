@@ -14,7 +14,7 @@ export default async function NewProjectRoute() {
     <AppShell dashboardMode="local">
       <PageHeader
         title="Create project"
-        description="Start here. Localizer will keep this project in your local workspace, with no sign-in required during development."
+        description="Choose your app name and languages. This project is saved on this computer. No account needed."
       />
       <div className="grid gap-4 xl:grid-cols-[minmax(0,.8fr)_minmax(320px,.55fr)]">
         <Panel title="Project details">
@@ -23,10 +23,10 @@ export default async function NewProjectRoute() {
         <Panel title="What happens next">
           <ol className="space-y-3 text-sm leading-6 text-[#6B7280]">
             <li>1. Create the project.</li>
-            <li>2. Copy the project command from its overview.</li>
-            <li>3. Run it inside your iOS repository.</li>
+            <li>2. Copy the command shown on the next page.</li>
+            <li>3. Run it inside your iOS project.</li>
             <li>
-              4. Review source strings here and sync the generated catalog back.
+              4. Check the translations here, then sync them back to Xcode.
             </li>
           </ol>
         </Panel>

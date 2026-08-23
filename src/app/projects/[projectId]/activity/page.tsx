@@ -38,25 +38,25 @@ export default async function ActivityRoute({
       <PageHeader
         eyebrow={project.name}
         title="Activity"
-        description="A local record of accepted analyses and saved manual translations. Future hosted activity will include jobs, reviews, and pull requests."
+        description="See when the CLI scanned this app and when translations were saved."
       />
       <div className="space-y-4">
         {project.analysis ? (
-          <Panel title="Latest CLI analysis">
+          <Panel title="Latest CLI scan">
             <p className="text-sm text-[#111827]">
-              Accepted {project.analysis.runId}
+              Completed {project.analysis.runId}
             </p>
             <p className="mt-1 text-sm text-[#6B7280]">
               {new Date(project.analysis.receivedAt).toLocaleString()} ·{" "}
-              {project.strings.filter((item) => !item.stale).length} active
+              {project.strings.filter((item) => !item.stale).length} current
               strings · CLI {project.analysis.cliVersion}
             </p>
           </Panel>
         ) : (
           <Panel title="No CLI activity yet">
             <p className="text-sm text-[#6B7280]">
-              Run the project’s init command from the overview to send the first
-              analysis.
+              Run the project&apos;s setup command from the overview to scan the
+              app.
             </p>
           </Panel>
         )}
@@ -65,7 +65,7 @@ export default async function ActivityRoute({
             key={`${translation.stableKey}-${translation.locale}`}
             title={
               translation.stale
-                ? `${translation.locale} translation is stale`
+                ? `${translation.locale} text is no longer in the app`
                 : translation.status === "needs_review"
                   ? `${translation.locale} translation needs review`
                   : `Saved ${translation.locale} translation`
@@ -75,12 +75,12 @@ export default async function ActivityRoute({
               {translation.stableKey}: {translation.value}
             </p>
             <p className="mt-1 text-xs text-[#6B7280]">
-              {new Date(translation.updatedAt).toLocaleString()} · manual ·{" "}
+              {new Date(translation.updatedAt).toLocaleString()} ·{" "}
               {translation.stale
-                ? "source is no longer in the latest analysis"
+                ? "this text is no longer in the latest scan"
                 : translation.status === "needs_review"
-                  ? "waiting for source review"
-                  : "approved for sync"}
+                  ? "check this translation again"
+                  : "ready to sync"}
             </p>
           </Panel>
         ))}

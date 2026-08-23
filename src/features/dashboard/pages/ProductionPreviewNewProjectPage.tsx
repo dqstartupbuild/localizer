@@ -9,21 +9,21 @@ export function ProductionPreviewNewProjectPage() {
   return (
     <AppShell dashboardMode="public-preview">
       <PageHeader
-        title="Create a project locally"
-        description="Project creation needs the Localizer server running on your own machine."
+        title="Create a project on your computer"
+        description="The hosted demo cannot create or save projects."
       />
       <ProductionPreviewNotice />
-      <Panel title="Start on your machine">
+      <Panel title="Run Localizer on your computer">
         <p className="max-w-2xl text-sm leading-6 text-[#6B7280]">
-          Clone Localizer, start its local dashboard, and open that dashboard in
-          your desktop browser. Your projects and translations stay on that
-          machine until you choose to connect a hosted service.
+          Download Localizer, run <code>npm run dev</code>, and open the
+          dashboard on a desktop. Your projects and translations are saved on
+          that computer.
         </p>
         <Link
           href="/support"
           className="mt-4 inline-block text-sm font-semibold text-[#08766F]"
         >
-          View local setup help
+          View setup steps
         </Link>
       </Panel>
     </AppShell>

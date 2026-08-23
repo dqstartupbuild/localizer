@@ -6,59 +6,55 @@ export function TermsPage() {
     <PublicPageShell>
       <LegalArticle
         title="Terms"
-        description="Effective August 23, 2026. Plain-language terms for the Localizer website and the open-source project."
+        description="Rules for using the Localizer website and source code. Effective August 23, 2026."
       >
         <section>
-          <h2>Using the project</h2>
+          <h2>Use the code</h2>
           <p>
-            You may use, copy, modify, and distribute the Localizer source code
-            under the terms of the MIT License included in this repository. The
-            source license governs the code. This page does not replace or
-            expand that license.
+            You can use, copy, change, and share Localizer under the MIT License
+            in this repository. The MIT License controls how the source code may
+            be used. This page does not replace that license.
           </p>
         </section>
         <section>
-          <h2>Website use</h2>
+          <h2>Use the site responsibly</h2>
           <p>
-            Please use the website, repository, and issue tracker lawfully and
-            respectfully. Do not interfere with the service, misuse other
-            people’s information, or submit harmful material.
+            Follow the law. Do not attack the website, misuse someone
+            else&apos;s information, or post harmful material.
           </p>
         </section>
         <section>
-          <h2>Open-source, as-is</h2>
+          <h2>There is no warranty</h2>
           <p>
-            Localizer is provided as-is, without warranties or guarantees. The
-            project is still developing, and features may change, be incomplete,
-            or not fit your particular workflow. You are responsible for
-            reviewing generated files and maintaining your own backups before
-            using them in a release.
+            Localizer is provided as-is. It may have bugs, change, or not work
+            for your project. Check every generated file and keep your own
+            backups before you ship an app.
           </p>
         </section>
         <section>
-          <h2>Third-party services</h2>
+          <h2>Other websites</h2>
           <p>
-            Links to GitHub and other third-party services are provided for
-            convenience. Their terms and policies apply when you use them.
+            Localizer links to GitHub and other websites. Their own terms and
+            privacy policies apply when you use them.
           </p>
         </section>
         <section>
-          <h2>Updates</h2>
+          <h2>Changes to these terms</h2>
           <p>
-            These terms may be updated as the project changes. Material updates
-            will be reflected in the repository history and on this page.
+            These terms may change as Localizer changes. You can see updates on
+            this page and in the GitHub history.
           </p>
         </section>
         <section>
-          <h2>Project contact</h2>
+          <h2>Questions</h2>
           <p>
             Use the{" "}
             <a href="https://github.com/dqstartupbuild/localizer/issues">
               GitHub issue tracker
             </a>{" "}
-            for project questions. Do not post security details publicly; use{" "}
+            for questions. Do not post security details there. Use{" "}
             <a href="https://github.com/dqstartupbuild/localizer/security/advisories/new">
-              private vulnerability reporting
+              GitHub&apos;s private security form
             </a>{" "}
             instead.
           </p>

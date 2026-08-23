@@ -23,7 +23,7 @@ export function createSidebarNavigationItems(
     projectsItem,
     { label: "Overview", icon: "overview", href: `${projectHref}/overview` },
     {
-      label: "Localizations",
+      label: "Translations",
       icon: "languages",
       href: `${projectHref}/localizations`,
     },

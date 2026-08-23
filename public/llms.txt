@@ -1,18 +1,18 @@
 # Localizer
 
-Localizer is an MIT-licensed, open-source localization workflow for iOS projects.
+Localizer helps you check translations for an iOS app and sync them back to Xcode. It is free and open source under the MIT License.
 
 ## Current behavior
 
-- The local dashboard and CLI work together during development without an account.
-- Source files remain under CLI control in the target repository.
-- The dashboard receives normalized localization data and returns reviewed translation data.
-- `sync` writes `Localizer/Generated/Localizer.xcstrings` in the target repository.
-- The current scanner intentionally supports common SwiftUI string literals. A normalized manifest can cover more complex source.
+- The dashboard and CLI work together on the user's computer without an account.
+- The CLI reads the iOS project files. The dashboard does not browse the user's files.
+- The dashboard receives app text and sends saved translations back to the CLI.
+- `sync` writes `Localizer/Generated/Localizer.xcstrings` inside the iOS project.
+- The built-in scan finds common SwiftUI text. A manifest file can cover text it misses.
 
 ## Important boundaries
 
-- No hosted authentication, remote repository import, automatic translation, or pull-request automation is implemented.
+- Localizer does not yet import GitHub projects, translate text automatically, open pull requests, or sync through the hosted website.
 - The dashboard is desktop-only. Public marketing and policy routes are responsive.
 - Do not treat prototype dashboard screens as production capabilities.
 

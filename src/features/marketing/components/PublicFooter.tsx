@@ -8,7 +8,7 @@ export function PublicFooter() {
         <div>
           <BrandMark />
           <p className="public-footer__statement">
-            A local-first localization workspace for iOS projects.
+            Check iOS app translations and sync them back to Xcode.
           </p>
         </div>
         <div className="public-footer__links" aria-label="Project links">
@@ -16,11 +16,11 @@ export function PublicFooter() {
           <Link href="/privacy">Privacy</Link>
           <Link href="/terms">Terms</Link>
           <Link href="/license">MIT license</Link>
-          <a href="https://github.com/dqstartupbuild/localizer">Source</a>
+          <a href="https://github.com/dqstartupbuild/localizer">GitHub</a>
         </div>
       </div>
       <p className="public-footer__copyright">
-        Open source under the MIT License. Built in public.
+        Free and open source under the MIT License.
       </p>
     </footer>
   );

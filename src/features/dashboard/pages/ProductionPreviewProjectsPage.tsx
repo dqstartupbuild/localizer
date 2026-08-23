@@ -13,15 +13,15 @@ export function ProductionPreviewProjectsPage() {
     <AppShell dashboardMode="public-preview">
       <PageHeader
         title="Projects"
-        description="See how a localization workspace looks after a source analysis."
+        description="See the text and translations Localizer found in a sample iOS app."
       />
       <ProductionPreviewNotice />
       <div className="grid gap-4 xl:grid-cols-2">
         {projects.map((project) => (
           <Panel key={project.id} title={project.name}>
             <p className="text-sm text-[#6B7280]">
-              {project.strings.length} sample source strings ·{" "}
-              {project.locales.length - 1} target locales
+              {project.strings.length} app strings ·{" "}
+              {project.locales.length - 1} translation languages
             </p>
             <Link
               href={`/projects/${project.id}/overview`}

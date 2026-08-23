@@ -41,11 +41,11 @@ export default async function LocalizationsRoute({
     <AppShell dashboardMode="local" activeProjectId={project.id}>
       <PageHeader
         eyebrow={project.name}
-        title="Localizations"
+        title="Translations"
         description={
           locale
-            ? `These are the source strings from the latest CLI analysis. Save ${locale} translations here, then run sync in the iOS repository.`
-            : "Add a target locale before editing translations."
+            ? `Edit the ${locale} translations here. When you are done, run sync inside your iOS project.`
+            : "Add a translation language before editing translations."
         }
         actions={
           locale ? (
@@ -55,21 +55,25 @@ export default async function LocalizationsRoute({
       />
       <div className="space-y-4">
         {!project.analysis ? (
-          <Panel title="Waiting for source strings">
+          <Panel title="Waiting for app text">
             <p className="text-sm text-[#6B7280]">
-              Run the project’s init command in your iOS repository. The
-              dashboard will show the accepted analysis here.
+              Run the project&apos;s setup command inside your iOS project. The
+              text Localizer finds will appear here.
             </p>
           </Panel>
         ) : null}
-        {strings.map((source) => (
-          <Panel key={source.stableKey} title={source.stableKey}>
+        {strings.map((source, index) => (
+          <Panel key={source.stableKey} title={`App text ${index + 1}`}>
             <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(280px,.7fr)]">
               <div>
-                <p className="text-sm font-semibold text-[#111827]">
+                <p className="text-sm font-semibold break-words text-[#111827]">
                   {source.sourceText}
                 </p>
                 <p className="mt-2 text-xs text-[#6B7280]">
+                  Key: {source.stableKey}
+                </p>
+                <p className="mt-2 text-xs break-words text-[#6B7280]">
+                  Found in{" "}
                   {source.occurrences
                     .map((item) => `${item.file}:${item.line}`)
                     .join(", ")}
@@ -110,9 +114,9 @@ export default async function LocalizationsRoute({
         strings.filter((source) => !source.stale).length === 0 ? (
           <Panel title="No supported strings found">
             <p className="text-sm text-[#6B7280]">
-              The first scanner only recognizes common SwiftUI string literals.
-              Use <code>analyze --manifest</code> for a supplied normalized
-              manifest.
+              The built-in scan only finds common SwiftUI text. If your app
+              stores text another way, run <code>analyze --manifest</code> with
+              a manifest file.
             </p>
           </Panel>
         ) : null}

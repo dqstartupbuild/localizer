@@ -5,7 +5,7 @@ import { createPageMetadata } from "~/features/marketing/site/createPageMetadata
 export const metadata: Metadata = createPageMetadata({
   title: "Privacy | Localizer",
   description:
-    "How Localizer handles local development data and the public site today.",
+    "What Localizer stores, where it is saved, and how to delete it.",
   path: "/privacy",
 });
 export default function Privacy() {

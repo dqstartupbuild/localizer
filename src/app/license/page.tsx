@@ -4,7 +4,7 @@ import { createPageMetadata } from "~/features/marketing/site/createPageMetadata
 
 export const metadata: Metadata = createPageMetadata({
   title: "MIT License | Localizer",
-  description: "A plain-language summary of the Localizer MIT License.",
+  description: "What the MIT License lets you do with Localizer.",
   path: "/license",
 });
 export default function License() {

@@ -16,7 +16,7 @@ export default async function ProjectsRoute() {
     <AppShell dashboardMode="local">
       <PageHeader
         title="Projects"
-        description="Your local development workspace is saved on this machine. Connect an iOS repository with the CLI when a project is ready."
+        description="Your projects are saved on this computer. Create one, then run its CLI command inside your iOS project."
         actions={
           <Link
             href="/projects/new"
@@ -31,8 +31,8 @@ export default async function ProjectsRoute() {
           <Panel key={project.id} title={project.name}>
             <p className="text-sm text-[#6B7280]">
               {project.analysis
-                ? `${project.strings.filter((item) => !item.stale).length} active source strings · revision ${project.revision}`
-                : "Waiting for the first CLI analysis"}
+                ? `${project.strings.filter((item) => !item.stale).length} app strings · version ${project.revision}`
+                : "Waiting for the CLI to scan this app"}
             </p>
             <Link
               href={`/projects/${project.id}/overview`}
@@ -45,10 +45,10 @@ export default async function ProjectsRoute() {
       </div>
       {projects.length === 0 ? (
         <div className="mt-4">
-          <Panel title="Nothing connected yet">
+          <Panel title="No projects yet">
             <p className="text-sm text-[#6B7280]">
-              Create a project, then run the exact command shown in its overview
-              from your iOS repository.
+              Create a project, then run the command it gives you inside your
+              iOS project.
             </p>
           </Panel>
         </div>

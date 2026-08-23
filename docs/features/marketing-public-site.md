@@ -8,6 +8,8 @@ The public Localizer site describes the implemented local development workflow w
 
 The home route uses a localization catalog as the signature artifact. It shows a source string, reviewed locale rows, and the generated catalog path instead of a generic dashboard mockup. The public palette is deep green-black, paper-white, and tonal teal. Content is visible by default, and the catalog uses only a brief hover-state transition that is removed by `prefers-reduced-motion`.
 
+The public copy uses short, literal statements. The headline says that Localizer lets users review iOS app translations. The supporting copy names the real sequence: the CLI finds app text, the user checks translations in the dashboard, and `sync` writes them back to Xcode. User-facing pages must not use internal phrases such as "normalized entries," "review bundle," "source analysis," or "local-first workflow" when a plain description works.
+
 ## Routes
 
 - `/`: public overview and one dashboard action.
@@ -39,3 +41,5 @@ SECURITY.md                         private vulnerability reporting process
 ## Content boundaries
 
 Copy must stay aligned with the local CLI/dashboard implementation. Public dashboard actions open `/projects` in every environment. Development and test provide the persistent local workspace; production provides the clearly labeled read-only sample preview documented in [production-public-preview.md](./production-public-preview.md). Do not claim published npm installation, hosted authentication, automatic translation, remote repository import, pull-request automation, or production storage unless those capabilities are actually shipped. Do not add a support email or SLA without a real maintained support channel.
+
+Write for someone seeing Localizer for the first time. Say "app text," "translation language," "scan," "check," and "sync back to Xcode" in the interface. Keep protocol and storage terms in developer documentation unless the user needs the exact term to complete a command.

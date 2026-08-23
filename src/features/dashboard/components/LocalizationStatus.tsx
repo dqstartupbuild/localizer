@@ -3,10 +3,10 @@ type LocalizationStatusProps = {
 };
 
 const labels = {
-  approved: "Approved",
+  approved: "Ready",
   missing: "Missing",
   needs_review: "Needs review",
-  stale: "Stale",
+  stale: "No longer in app",
 } as const;
 
 const colors = {

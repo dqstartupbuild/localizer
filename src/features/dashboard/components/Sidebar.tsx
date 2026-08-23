@@ -25,16 +25,16 @@ export function Sidebar({ activeProjectId, dashboardMode }: SidebarProps) {
       </nav>
       {dashboardMode === "local" ? (
         <p className="mt-auto hidden pt-8 text-xs leading-5 text-[#6B7280] lg:block">
-          Local workspace
+          Running on this computer
           <br />
-          Saved on this machine
+          No account needed
         </p>
       ) : (
         <div className="mt-8 hidden lg:block">
           <p className="text-xs leading-5 text-[#6B7280]">
-            Public preview
+            Hosted demo
             <br />
-            Read-only sample data
+            Sample data only
           </p>
         </div>
       )}

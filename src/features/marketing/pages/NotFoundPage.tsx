@@ -6,13 +6,10 @@ export function NotFoundPage() {
     <PublicPageShell>
       <main className="not-found-page">
         <p>404</p>
-        <h1>That page is not in this catalog.</h1>
-        <p>
-          Try the public site, open the local dashboard, or visit support for
-          the current workflow.
-        </p>
+        <h1>We could not find that page.</h1>
+        <p>Go back to the home page and try another link.</p>
         <Link href="/">
-          Return home <span aria-hidden="true">↗</span>
+          Go home <span aria-hidden="true">↗</span>
         </Link>
       </main>
     </PublicPageShell>

@@ -19,45 +19,45 @@ export function ProductionPreviewProjectOverviewPage({
     <AppShell dashboardMode="public-preview" activeProjectId={project.id}>
       <PageHeader
         title={project.name}
-        description="A read-only sample workspace using bundled, validated project data."
+        description="This is a sample project. Nothing here is your data, and nothing can be changed."
       />
       <ProductionPreviewNotice />
       <div className="grid gap-4 md:grid-cols-3">
-        <Panel title="Source strings">
+        <Panel title="App strings">
           <p className="text-3xl font-semibold">{project.strings.length}</p>
-          <p className="mt-1 text-sm text-[#6B7280]">in this sample analysis</p>
+          <p className="mt-1 text-sm text-[#6B7280]">found in this app</p>
         </Panel>
         <Panel title="Translated strings">
           <p className="text-3xl font-semibold">{translated}</p>
           <p className="mt-1 text-sm text-[#6B7280]">
-            with a sample translation
+            with at least one translation
           </p>
         </Panel>
-        <Panel title="Revision">
+        <Panel title="Sample version">
           <p className="text-3xl font-semibold">{project.revision}</p>
           <p className="mt-1 text-sm text-[#6B7280]">
-            bundled preview revision
+            version of this sample data
           </p>
         </Panel>
       </div>
       <div className="mt-4 grid gap-4 xl:grid-cols-2">
-        <Panel title="Included locales">
+        <Panel title="Languages">
           <p className="text-sm text-[#6B7280]">
             {project.locales.join(" · ")}
           </p>
         </Panel>
-        <Panel title="Explore the sample">
+        <Panel title="More pages">
           <Link
             href={`/projects/${project.id}/localizations`}
             className="text-sm font-semibold text-[#08766F]"
           >
-            Review sample strings
+            View translations
           </Link>
           <Link
             href={`/projects/${project.id}/activity`}
             className="ml-5 text-sm font-semibold text-[#08766F]"
           >
-            See activity
+            View activity
           </Link>
         </Panel>
       </div>

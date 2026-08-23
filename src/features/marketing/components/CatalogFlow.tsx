@@ -1,15 +1,15 @@
 const flowSteps = [
   [
-    "Your repository",
-    "The CLI reads supported source strings where your app lives.",
+    "Find app text",
+    "Run the CLI in your iOS project. It finds the SwiftUI text Localizer supports.",
   ],
   [
-    "A reviewable catalog",
-    "The local dashboard receives normalized entries, not filesystem access.",
+    "Check translations",
+    "Open the dashboard to read and edit each translation.",
   ],
   [
-    "A careful return",
-    "Reviewed translations become a generated String Catalog inside the repository.",
+    "Sync to Xcode",
+    "Run sync. Localizer writes Localizer.xcstrings into your project.",
   ],
 ] as const;
 

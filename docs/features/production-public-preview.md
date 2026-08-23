@@ -15,6 +15,8 @@ Production visitors can open `/projects` without creating an account. The route 
 - Dashboard pages remain `noindex` through `src/app/projects/layout.tsx`.
 - The localizer HTTP API remains local-only. In production it responds with a structured `503 service_unavailable` response rather than touching local filesystem storage. The tRPC dashboard prototype endpoint is development-only and returns an unavailable error in production.
 
+The preview copy must say "sample data" directly and explain that visitors can look around but cannot edit or save anything. Avoid internal terms such as "bundled project," "validated project data," and "read-only workspace" in the interface.
+
 ## Data boundary
 
 `src/server/localizer/preview/productionPreviewProject.ts` owns the sample project. It is validated with the same `projectStateSchema` used for local projects when the module loads. It is bundled with the application, has no database dependency, and must not include real user content.

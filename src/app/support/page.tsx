@@ -4,8 +4,7 @@ import { createPageMetadata } from "~/features/marketing/site/createPageMetadata
 
 export const metadata: Metadata = createPageMetadata({
   title: "Support | Localizer",
-  description:
-    "Current Localizer setup steps, commands, limits, and open-source support paths.",
+  description: "How to set up Localizer, run the CLI, and get help.",
   path: "/support",
 });
 export default function Support() {

@@ -51,7 +51,9 @@ export function TranslationEditor({
       setMessage(errorMessage);
       return;
     }
-    setMessage("Saved. Run localizer sync to write the String Catalog.");
+    setMessage(
+      "Saved. Run localizer sync inside your iOS project to write this translation back to Xcode.",
+    );
     router.refresh();
   }
   return (
@@ -69,8 +71,8 @@ export function TranslationEditor({
       </label>
       {status === "needs_review" ? (
         <p className="text-xs text-[#8A5A13]">
-          The source text changed. Saving this value approves it for the new
-          source text.
+          The original app text changed. Check this translation before you save
+          it again.
         </p>
       ) : null}
       {message ? <p className="text-xs text-[#456a66]">{message}</p> : null}

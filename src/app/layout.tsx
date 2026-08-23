@@ -20,8 +20,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 export const metadata: Metadata = {
   ...(getSiteUrl() ? { metadataBase: getSiteUrl() } : {}),
   title: { default: "Localizer", template: "%s" },
-  description:
-    "A local-first, open-source localization workflow for iOS projects.",
+  description: "Check translations for an iOS app and sync them back to Xcode.",
   openGraph: { images: [] },
   twitter: { images: [] },
   icons: [{ rel: "icon", url: "/localizer-mark.svg", type: "image/svg+xml" }],

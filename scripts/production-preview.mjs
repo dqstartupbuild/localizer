@@ -16,7 +16,8 @@ try {
 
   const projects = await requestText(origin, "/projects");
   assert.equal(projects.response.status, 200);
-  assert.match(projects.text, /Public preview/);
+  assert.match(projects.text, /This is sample data/);
+  assert.match(projects.text, /cannot edit or save/);
   assert.match(projects.text, /Trail Notes/);
   assert.match(projects.text, /href="\/projects"/);
   assert.doesNotMatch(projects.text, /Create project/);

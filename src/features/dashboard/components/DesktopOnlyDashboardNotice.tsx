@@ -18,19 +18,18 @@ export function DesktopOnlyDashboardNotice({
             id="desktop-only-title"
             className="max-w-sm text-4xl font-semibold tracking-[-0.035em]"
           >
-            Open Localizer on a desktop.
+            Open this page on a computer.
           </h1>
           <p className="mt-5 max-w-md text-base leading-7 text-[#4B5563]">
-            This dashboard needs a wider screen for reviewing strings and
-            working with project files. Visit this page from a desktop browser
-            to continue.
+            The dashboard has tables that do not fit on a phone. Open this same
+            page on a desktop or laptop.
           </p>
         </div>
       </div>
       <p className="text-sm text-[#4B5563]">
         {dashboardMode === "public-preview"
-          ? "The public preview uses read-only sample data."
-          : "Your local work stays saved."}
+          ? "This demo uses sample data."
+          : "Your work is saved on this computer."}
       </p>
     </section>
   );

@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Localizer",
     short_name: "Localizer",
     description:
-      "A local-first, open-source localization workflow for iOS projects.",
+      "Check translations for an iOS app and sync them back to Xcode.",
     start_url: "/",
     display: "standalone",
     background_color: "#eef3ed",

@@ -6,35 +6,33 @@ export function LicensePage() {
     <PublicPageShell>
       <LegalArticle
         title="MIT License"
-        description="Localizer is open-source software released under the MIT License."
+        description="Localizer is free to use, change, copy, and share under the MIT License."
       >
         <section>
-          <h2>What that means</h2>
+          <h2>You can use the code</h2>
           <p>
-            The MIT License permits broad use of the code: you can use it, copy
-            it, modify it, merge it into other projects, publish it, and
-            distribute it. Keep the copyright and license notice with
-            substantial copies.
+            You can use, copy, change, publish, and share Localizer. You can
+            also add it to another project. Keep the copyright and license
+            notice with any substantial copy of the code.
           </p>
         </section>
         <section>
-          <h2>The important limit</h2>
+          <h2>There is no warranty</h2>
           <p>
-            The license provides the software as-is, without warranty. It does
-            not promise that Localizer will work for every purpose or protect
-            against every problem.
+            Localizer is provided as-is. There is no promise that it will work
+            for every project or be free of problems.
           </p>
         </section>
         <section>
-          <h2>Read the full text</h2>
+          <h2>Read the license</h2>
           <p>
-            Read the canonical{" "}
+            Read the full{" "}
             <a href="https://github.com/dqstartupbuild/localizer/blob/main/LICENSE">
-              LICENSE file in the repository
+              LICENSE file on GitHub
             </a>{" "}
             or the{" "}
             <a href="https://opensource.org/license/mit">
-              Open Source Initiative’s MIT License page
+              Open Source Initiative&apos;s MIT License page
             </a>
             .
           </p>

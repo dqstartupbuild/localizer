@@ -5,39 +5,41 @@ export function SupportPage() {
     <PublicPageShell>
       <main className="support-page">
         <header>
-          <h1>Start with the project in front of you.</h1>
+          <h1>How to run Localizer</h1>
           <p>
-            Localizer is early, local-first software. The support path is the
-            repository, the local dashboard, and a short set of commands you can
-            inspect. The hosted dashboard is a read-only preview with sample
-            data; create and edit projects from your own local dashboard.
+            Run the dashboard on your computer and create a project. Copy its
+            command, then run it from your iOS project folder. The hosted
+            dashboard only shows sample data.
           </p>
         </header>
         <section>
           <h2>Set up a project</h2>
           <ol>
             <li>
-              Run <code>npm run dev</code> from this Localizer checkout.
+              <a href="https://github.com/dqstartupbuild/localizer">
+                Download Localizer from GitHub
+              </a>
+              . In the Localizer folder, run <code>npm install</code>, then{" "}
+              <code>npm run dev</code>.
             </li>
             <li>
-              Open the dashboard on a desktop browser and create a project.
+              Open <code>/projects</code> in a desktop browser.
+            </li>
+            <li>Create a project and copy the command it gives you.</li>
+            <li>
+              Run that command inside the iOS project you want to translate.
             </li>
             <li>
-              Copy the project command from its overview into the target iOS
-              repository.
-            </li>
-            <li>
-              Run the same CLI path with <code>sync</code> after you have
-              reviewed translations in the dashboard.
+              After you check the translations, run <code>sync</code> to write
+              them back to Xcode.
             </li>
           </ol>
         </section>
         <section>
-          <h2>Run commands from the target repository</h2>
+          <h2>CLI commands</h2>
           <p>
-            The dashboard gives each project its own copyable command. Replace
-            the example project ID only when the dashboard gives you a different
-            one. These are not bare commands installed in your iOS repository.
+            Run these commands inside the iOS project you want to translate. Use
+            the exact Localizer path and project ID shown in your dashboard.
           </p>
           <dl>
             <div>
@@ -91,31 +93,30 @@ export function SupportPage() {
           </dl>
         </section>
         <section>
-          <h2>Known boundaries</h2>
+          <h2>What works today</h2>
           <p>
-            The current scanner intentionally covers common SwiftUI literal
-            calls. For more complex source or context-specific strings, use a
-            normalized manifest. Hosted sync, account access, automatic
-            translation, remote repository import, and pull-request automation
-            are not part of the implemented workflow.
+            Localizer can find common SwiftUI text. If it misses something, you
+            can give the CLI a manifest file. Localizer does not yet translate
+            text automatically, import GitHub projects, open pull requests, or
+            sync through the hosted website.
           </p>
         </section>
         <section>
-          <h2>Get help or report a problem</h2>
+          <h2>Need help?</h2>
           <p>
             <a href="https://github.com/dqstartupbuild/localizer/issues">
               Open a GitHub issue
             </a>{" "}
-            for reproducible bugs, feature ideas, or documentation fixes. Do not
-            include vulnerabilities in public issues. Use{" "}
+            for bugs, feature ideas, or documentation problems. For a security
+            problem, do not post the details publicly. Use{" "}
             <a href="https://github.com/dqstartupbuild/localizer/security/advisories/new">
-              GitHub private vulnerability reporting
+              GitHub&apos;s private security form
             </a>{" "}
-            for security concerns.
+            instead.
           </p>
           <p>
-            Localizer is an open-source project and does not offer a guaranteed
-            response time or support SLA.
+            Localizer is an open-source project, so help is not guaranteed and
+            may take time.
           </p>
         </section>
       </main>

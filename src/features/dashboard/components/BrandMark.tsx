@@ -8,9 +8,7 @@ export function BrandMark() {
       </div>
       <div>
         <div className="text-xl font-semibold text-[#111827]">Localizer</div>
-        <p className="text-xs text-[#6B7280]">
-          Localize your app in 5 minutes.
-        </p>
+        <p className="text-xs text-[#6B7280]">Review iOS app translations.</p>
       </div>
     </div>
   );

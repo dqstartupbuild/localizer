@@ -4,7 +4,7 @@ import { createPageMetadata } from "~/features/marketing/site/createPageMetadata
 
 export const metadata: Metadata = createPageMetadata({
   title: "Terms | Localizer",
-  description: "Terms for the Localizer website and open-source project.",
+  description: "Rules for using the Localizer website and source code.",
   path: "/terms",
 });
 export default function Terms() {
