@@ -9,7 +9,7 @@ const flowSteps = [
   ],
   [
     "Sync to Xcode",
-    "Run sync. Localizer writes Localizer.xcstrings into your project.",
+    "Run sync. Localizer writes Localizable.xcstrings into your project.",
   ],
 ] as const;
 

@@ -1,5 +1,5 @@
-import { join } from "node:path";
 import { assertSafeOutputPath } from "./assertSafeOutputPath.mjs";
+import { getGeneratedCatalogPath } from "./getGeneratedCatalogPath.mjs";
 import { getStatePath } from "./getStatePath.mjs";
 import { readJson } from "./readJson.mjs";
 import { requestJson } from "./requestJson.mjs";
@@ -12,7 +12,7 @@ export async function runStatus(root) {
   const state = await readJson(getStatePath(root));
   const catalog = await assertSafeOutputPath(
     root,
-    join(root, "Localizer", "Generated", "Localizer.xcstrings"),
+    getGeneratedCatalogPath(root),
   );
   const marker = await assertSafeOutputPath(root, `${catalog}.localizer-hash`);
   const catalogContent = await readOptionalText(catalog);

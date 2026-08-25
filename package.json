@@ -16,8 +16,15 @@
     "typecheck": "tsc --noEmit",
     "localizer": "node packages/localizer-cli/src/index.mjs",
     "test:localizer-roundtrip": "node scripts/localizer-roundtrip.mjs",
+    "test:localizer-analyzer": "swift test --package-path packages/localizer-analyzer",
+    "test:localizer-mcp": "node scripts/localizer-mcp.mjs",
+    "test:localizer-mcp-configuration": "node scripts/localizer-mcp-configuration.mjs",
+    "test:localizer-xcode-integration": "node scripts/localizer-xcode-integration.mjs",
+    "test:localizer-verification": "node scripts/localizer-verification.mjs",
+    "test:localizer-strict-check": "node scripts/localizer-strict-check.mjs",
+    "test:localizer-routing": "node scripts/localizer-routing.mjs",
     "test:production-preview": "npm run build && node scripts/production-preview.mjs",
-    "test": "npm run test:localizer-roundtrip && npm run test:production-preview"
+    "test": "npm run test:localizer-analyzer && npm run test:localizer-roundtrip && npm run test:localizer-mcp && npm run test:localizer-mcp-configuration && npm run test:localizer-xcode-integration && npm run test:localizer-verification && npm run test:localizer-strict-check && npm run test:localizer-routing && npm run test:production-preview"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.12.0",

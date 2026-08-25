@@ -9,7 +9,28 @@ node '/absolute/path/to/localizer-main/packages/localizer-cli/src/index.mjs' ini
 node '/absolute/path/to/localizer-main/packages/localizer-cli/src/index.mjs' sync
 ```
 
-The CLI scans supported SwiftUI literals, uploads a normalized manifest, and syncs dashboard-approved translations into `Localizer/Generated/Localizer.xcstrings`. Local data persists in `.localizer-dev/` (or `LOCALIZER_DATA_DIR`) and is ignored by Git. See [the feature guide](docs/features/local-development-cli-dashboard.md).
+The CLI uses a SwiftSyntax analyzer to inventory supported SwiftUI and native
+localization calls, uploads a normalized manifest, and syncs dashboard-approved
+translations into `Localizer/Generated/Localizable.xcstrings`. Local data persists
+in `.localizer-dev/` (or `LOCALIZER_DATA_DIR`) and is ignored by Git. See [the
+feature guide](docs/features/local-development-cli-dashboard.md).
+
+For a whole-app localization pass, Localizer also exposes a read-only MCP server
+for a coding agent. It supplies a source inventory, Xcode-resource inspection,
+and a completion contract; it does not falsely treat a regex scan as proof of
+complete localization. See [the agent-assisted guide](docs/features/agent-assisted-full-localization.md).
+
+For customer coding agents, ship the included
+`skills/localizer-full-localization` skill beside the MCP configuration. It
+routes low-cost work to the CLI, reserves MCP for translation state and writes,
+and requires strict, evidence-based release certification. See the
+[customer-agent skill guide](docs/features/customer-agent-localization-skill.md).
+
+To add a generated default catalog to an Xcode target safely, see [the Xcode
+catalog integration guide](docs/features/xcode-catalog-integration.md).
+
+To run the selected app tests in every translation language, see [localized
+runtime verification](docs/features/localized-runtime-verification.md).
 
 `npm run localizer -- …` is only a convenience command when run from the Localizer checkout itself.
 

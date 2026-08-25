@@ -27,19 +27,19 @@ OpenCut uses the same broad local-first principle for its editor: projects can b
 7. The localizations screen shows the uploaded strings.
 8. Edit and save a translation in the dashboard.
 9. Run the CLI sync command.
-10. The CLI writes `.localizer/translations-cache.json` and `Localizer/Generated/Localizer.xcstrings`.
+10. The CLI writes `.localizer/translations-cache.json` and `Localizer/Generated/Localizable.xcstrings`.
 11. Repeating analysis or sync creates no duplicates and no file diff.
 12. If someone edits the generated catalog manually, Localizer refuses to overwrite it and writes a pending candidate for review.
 
 ## Source of Truth
 
-| Data                              | Authority                  | Local copy                                |
-| --------------------------------- | -------------------------- | ----------------------------------------- |
-| Source strings and occurrences    | CLI analysis manifest      | Latest accepted manifest metadata         |
-| Enabled locales                   | Dashboard project settings | CLI sync cache                            |
-| Manual translations and approvals | Dashboard workspace        | CLI sync cache and generated catalog      |
-| Generated String Catalog          | Derived artifact           | `Localizer/Generated/Localizer.xcstrings` |
-| CLI connection settings           | iOS repository             | `localizer.config.json`                   |
+| Data                              | Authority                  | Local copy                                  |
+| --------------------------------- | -------------------------- | ------------------------------------------- |
+| Source strings and occurrences    | CLI analysis manifest      | Latest accepted manifest metadata           |
+| Enabled locales                   | Dashboard project settings | CLI sync cache                              |
+| Manual translations and approvals | Dashboard workspace        | CLI sync cache and generated catalog        |
+| Generated String Catalog          | Derived artifact           | `Localizer/Generated/Localizable.xcstrings` |
+| CLI connection settings           | iOS repository             | `localizer.config.json`                     |
 
 Rules:
 

@@ -10,9 +10,9 @@ Localizer helps users check translations for an iOS app and sync them back to Xc
 2. Create a project in the desktop dashboard at `/projects/new`.
 3. Copy the project-specific CLI command into the target iOS repository.
 4. Run `init`, then analyze source strings and review translations in the dashboard.
-5. Run `sync` from the target repository to generate `Localizer/Generated/Localizer.xcstrings`.
+5. Run `sync` from the target repository to generate `Localizer/Generated/Localizable.xcstrings`.
 
-The CLI scans supported SwiftUI literals, uploads a normalized manifest to the local API, and syncs dashboard-approved translations into the generated String Catalog. Localizer retains the generated hash and avoids silently overwriting a catalog that was modified outside Localizer. Use a supplied normalized manifest when the simple scanner is insufficient.
+The CLI uses a SwiftSyntax analyzer to inventory supported SwiftUI and native localization calls, uploads a normalized manifest to the local API, and syncs dashboard-approved translations into the generated String Catalog. Localizer retains the generated hash and avoids silently overwriting a catalog that was modified outside Localizer. Use a supplied normalized manifest when the analyzer cannot safely model an app-specific pattern.
 
 ## Data and identity model
 
@@ -22,7 +22,7 @@ The CLI controls source files. The browser dashboard is not granted unrestricted
 
 ## Accuracy boundaries
 
-Do not claim that Localizer currently provides hosted sync, account management, automatic translation, GitHub repository import, pull-request automation, native source parsing beyond the stated scanner, or production durability. Dashboard routes for screenshots, metadata, settings, and screen discovery include prototype content. The dashboard is optimized for desktop use; the public site is responsive.
+Do not claim that Localizer currently provides hosted sync, account management, automatic translation, GitHub repository import, pull-request automation, complete arbitrary-app coverage, or production durability. Dashboard routes for screenshots, metadata, settings, and screen discovery include prototype content. The dashboard is optimized for desktop use; the public site is responsive.
 
 ## Repository links
 

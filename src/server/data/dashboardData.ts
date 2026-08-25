@@ -386,7 +386,7 @@ export const dashboardData: DashboardData = {
     {
       label: "Resource format",
       value: "String Catalog",
-      description: "Generate Localizer.xcstrings for modern Xcode projects.",
+      description: "Generate Localizable.xcstrings for modern Xcode projects.",
     },
     {
       label: "Build generation",

@@ -13,7 +13,7 @@ export function LocalizationLedger() {
       aria-label="Example iOS app translation"
     >
       <figcaption className="localization-ledger__heading">
-        <span>Localizer/Generated/Localizer.xcstrings</span>
+        <span>Localizer/Generated/Localizable.xcstrings</span>
         <span>3 languages · 1 app string</span>
       </figcaption>
       <div className="localization-ledger__source">

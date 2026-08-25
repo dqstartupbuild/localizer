@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "declaredScope": {
+    "targets": ["Example"],
+    "userFacingSurfaces": [
+      "SwiftUI views",
+      "UIKit controllers",
+      "InfoPlist.strings",
+      "String Catalogs",
+      "Remote content"
+    ],
+    "requiredFlows": ["Onboarding", "Account settings", "Checkout"]
+  },
+  "humanReview": {
+    "reviewer": "Name of accountable reviewer",
+    "reviewedAt": "2026-08-25T12:00:00.000Z",
+    "longTextChecked": true,
+    "rtlChecked": true,
+    "dynamicContentChecked": true
+  }
+}

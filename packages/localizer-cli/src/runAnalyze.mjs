@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { getStatePath } from "./getStatePath.mjs";
 import { readJson } from "./readJson.mjs";
 import { requestJson } from "./requestJson.mjs";
-import { scanSwiftUiLiterals } from "./scanSwiftUiLiterals.mjs";
+import { runNativeAnalyzer } from "./runNativeAnalyzer.mjs";
 import { writeJson } from "./writeJson.mjs";
 import { createAnalysisSourceHash } from "./createAnalysisSourceHash.mjs";
 import { readLocalizerConfig } from "./readLocalizerConfig.mjs";
@@ -13,7 +13,7 @@ export async function runAnalyze(root, options) {
   const base =
     typeof options.manifest === "string"
       ? await readJson(resolve(root, options.manifest))
-      : { strings: await scanSwiftUiLiterals(root) };
+      : await runNativeAnalyzer(root);
   const strings = base.strings;
   const manifest = {
     schemaVersion: 1,
@@ -48,6 +48,10 @@ export async function runAnalyze(root, options) {
   console.log(
     data.idempotent
       ? "Analysis is already current."
-      : `Uploaded ${strings.length} supported SwiftUI strings.`,
+      : `Uploaded ${strings.length} supported localizable strings.`,
   );
+  if (base.unsupportedPatterns?.length)
+    console.warn(
+      `Flagged ${base.unsupportedPatterns.length} dynamic localizable calls for agent or developer review.`,
+    );
 }

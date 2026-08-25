@@ -83,7 +83,7 @@ export default function OpenGraphImage() {
               paddingBottom: 16,
             }}
           >
-            <span>Localizer.xcstrings</span>
+            <span>Localizable.xcstrings</span>
             <span>3 languages</span>
           </div>
           <div

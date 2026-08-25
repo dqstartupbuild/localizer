@@ -87,7 +87,7 @@ export default async function ProjectOverviewRoute({
           </code>
           <p className="mt-3 text-xs text-[#6B7280]">
             After you save translations, run <code>{syncCommand}</code> to
-            create <code>Localizer/Generated/Localizer.xcstrings</code>.
+            create <code>Localizer/Generated/Localizable.xcstrings</code>.
           </p>
         </Panel>
         <Panel title="Latest scan">

@@ -9,6 +9,7 @@ import { runCli } from "./localizer-roundtrip/runCli.mjs";
 import { saveTranslation } from "./localizer-roundtrip/saveTranslation.mjs";
 import { startDevelopmentServer } from "./localizer-roundtrip/startDevelopmentServer.mjs";
 import { waitForHealth } from "./localizer-roundtrip/waitForHealth.mjs";
+import { saveMcpTranslations } from "../packages/localizer-cli/src/mcp/saveMcpTranslations.mjs";
 
 const root = await mkdtemp(join(tmpdir(), "localizer-roundtrip-repository-"));
 const emptyRoot = await mkdtemp(join(tmpdir(), "localizer-roundtrip-empty-"));
@@ -34,19 +35,22 @@ try {
   const stableKey = state.project.strings[0].stableKey;
   assert.equal(state.project.strings.length, 1);
   assert.equal(state.project.strings[0].occurrences.length, 2);
-  await saveTranslation(
-    apiUrl,
-    project.id,
-    stableKey,
-    state.project.revision,
-    "Te damos la bienvenida",
-  );
+  await saveMcpTranslations(root, {
+    expectedRevision: state.project.revision,
+    translations: [
+      {
+        stableKey,
+        locale: "es-ES",
+        value: "Te damos la bienvenida",
+      },
+    ],
+  });
   await runCli(["sync"], root);
   const catalogFile = join(
     root,
     "Localizer",
     "Generated",
-    "Localizer.xcstrings",
+    "Localizable.xcstrings",
   );
   const firstCatalog = await readFile(catalogFile, "utf8");
   assert.match(firstCatalog, /"Welcome back"/);
@@ -159,7 +163,7 @@ try {
     emptyRoot,
     "Localizer",
     "Generated",
-    "Localizer.xcstrings",
+    "Localizable.xcstrings",
   );
   assert.match(await readFile(emptyCatalog, "utf8"), /"strings": \{\}/);
   await runCli(["status"], emptyRoot);

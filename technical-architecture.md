@@ -142,7 +142,7 @@ After `npx localizer init`, the app repository should contain:
 │   └── screenshots-cache.json
 ├── Localizer/
 │   ├── Generated/
-│   │   ├── Localizer.xcstrings
+│   │   ├── Localizable.xcstrings
 │   │   ├── LocalizerStrings.generated.swift
 │   │   └── LocalizerScreenshotsUITests.generated.swift
 │   └── ScreenshotSupport/
@@ -1169,7 +1169,7 @@ Build phase runs localizer sync before generation
 Preferred MVP generated resources:
 
 ```text
-Localizer/Generated/Localizer.xcstrings
+Localizer/Generated/Localizable.xcstrings
 Localizer/Generated/LocalizerStrings.generated.swift
 ```
 
@@ -1207,7 +1207,7 @@ The build phase should declare input and output files where possible so Xcode ca
 2. Read `.localizer/translations-cache.json`.
 3. Validate selected locales.
 4. Validate required source strings.
-5. Generate `Localizer.xcstrings`.
+5. Generate `Localizable.xcstrings`.
 6. Generate `LocalizerStrings.generated.swift`.
 7. Write a generation stamp with source hash and translation cache hash.
 

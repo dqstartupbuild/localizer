@@ -7,8 +7,8 @@ Localizer helps you check translations for an iOS app and sync them back to Xcod
 - The dashboard and CLI work together on the user's computer without an account.
 - The CLI reads the iOS project files. The dashboard does not browse the user's files.
 - The dashboard receives app text and sends saved translations back to the CLI.
-- `sync` writes `Localizer/Generated/Localizer.xcstrings` inside the iOS project.
-- The built-in scan finds common SwiftUI text. A manifest file can cover text it misses.
+- `sync` writes `Localizer/Generated/Localizable.xcstrings` inside the iOS project.
+- The SwiftSyntax analyzer inventories supported SwiftUI and native localization calls. A manifest file can cover app-specific patterns it cannot safely model.
 
 ## Important boundaries
 
